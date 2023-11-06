@@ -1,0 +1,27 @@
+Intermediate,Ikzf1 TIF Affinity,increases,transform to RGC,0.0004,0.5,4,0
+Intermediate,Ikzf1 TIF Affinity,increases,transform to AC,0.0001,0.5,4,0
+Intermediate,Ikzf1 TIF Affinity,increases,transform to HC,0.0001,0.5,4,0
+Intermediate,Pou2f TIF Affinity,increases,transform to Cone,0.0001,0.5,4,0
+Intermediate,Pou2f TIF Affinity,decreases,transform to Rod,0.0,0.5,4,0
+Intermediate,Pou2f TIF Affinity,decreases,transform to BC,0.0,0.5,4,0
+Intermediate,Pou2f TIF Affinity,decreases,transform to MG,0.0,0.5,4,0
+Intermediate,FoxN4 TIF Affinity,increases,transform to Rod,0.001,0.5,12,0
+Intermediate,Nfi TIF Affinity,increases,transform to Rod,0.002,0.5,12,0
+Intermediate,Nfi TIF Affinity,increases,transform to BC,0.0001,0.5,4,0
+Intermediate,Nfi TIF Affinity,increases,transform to MG,0.0001,0.5,4,0
+Intermediate,Casz1 TIF Affinity,increases,transform to Rod,0.010,0.5,12,0
+Intermediate,Casz1 TIF Affinity,increases,transform to BC,0.0003,0.5,4,0
+RPC,time,increases,Ikzf1 TIF Affinity secretion target,1,500,300,0
+RPC,time,increases,Pou2f TIF Affinity secretion target,1,1500,300,0
+RPC,time,increases,Onecut TIF Affinity secretion target,1,2500,300,0
+RPC,time,increases,FoxN4 TIF Affinity secretion target,1,4500,300,0
+RPC,FoxN4 TIF Affinity,decreases,cycle entry,0.00035,0.5,2,0
+RPC,time,increases,miRNA TIF Affinity secretion target,1,5500,300,0
+RPC,miRNA TIF Affinity,decreases,cycle entry,0.0003,0.5,2,0
+RPC,time,increases,Nfi TIF Affinity secretion target,1,6500,300,0
+RPC,time,increases,Casz1 TIF Affinity secretion target,1,7500,300,0
+RPC,FoxN4 TIF Affinity,increases,transform to Intermediate,0.0001,0.5,4,0
+RPC,Casz1 TIF Affinity,increases,transform to Intermediate,0.0005,0.5,4,0
+RGC,Casz1 TIF Affinity,increases,transform to Rod,0.0005,0.5,4,0
+RGC,FoxN4 TIF Affinity,increases,transform to Rod,0.0005,0.5,4,0
+RGC,FoxN4 TIF Affinity,increases,transform to Cone,0.0,0.5,4,0

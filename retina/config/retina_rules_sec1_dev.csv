@@ -1,0 +1,44 @@
+Intermediate,intracellular Rod Quorum,increases,transform to Rod,0.0,0.5,4,0
+Intermediate,intracellular Cone Quorum,increases,transform to Cone,0.0,0.5,4,0
+Intermediate,intracellular AC Quorum,increases,transform to AC,0.0,0.5,4,0
+Intermediate,intracellular BC Quorum,increases,transform to BC,0.0,0.5,4,0
+Intermediate,intracellular HC Quorum,increases,transform to HC,0.0,0.5,4,0
+Intermediate,intracellular MG Quorum,increases,transform to MG,0.0,0.5,4,0
+RPC,time,increases,Pou2f TIF Affinity secretion target,1,1500,10,0
+RPC,time,increases,Onecut TIF Affinity secretion target,1,2500,10,0
+RPC,time,increases,FoxN4 TIF Affinity secretion target,1,3500,10,0
+RPC,time,increases,miRNA TIF Affinity secretion target,1,4500,10,0
+RPC,time,increases,Nfi TIF Affinity secretion target,1,5500,10,0
+RPC,time,increases,Casz1 TIF Affinity secretion target,1,6500,10,0
+RPC,FoxN4 TIF Affinity,decreases,Onecut TIF Affinity secretion target,0.0,0.5,10,0
+RPC,miRNA TIF Affinity,decreases,FoxN4 TIF Affinity secretion target,0.0,0.5,10,0
+RPC,Nfi TIF Affinity,decreases,miRNA TIF Affinity secretion target,0.0,0.5,10,0
+RPC,Casz1 TIF Affinity,decreases,Nfi TIF Affinity secretion target,0.0,0.5,10,0
+Intermediate,Ikzf1 TIF Affinity,increases,transform to RGC,1,0.5,4,0
+Intermediate,Ikzf1 TIF Affinity,increases,transform to AC,1,0.5,4,0
+Intermediate,Ikzf1 TIF Affinity,increases,transform to HC,1,0.5,4,0
+Intermediate,Onecut TIF Affinity,increases,transform to HC,1.01,0.5,4,0
+Intermediate,Onecut TIF Affinity,increases,transform to Cone,1.01,0.5,4,0
+Intermediate,Onecut TIF Affinity,increases,transform to AC,1.01,0.5,4,0
+RPC,time,increases,Ikzf1 TIF Affinity secretion target,1,500,10,0
+Intermediate,Pou2f TIF Affinity,increases,transform to Cone,1,0.5,4,0
+Intermediate,Pou2f TIF Affinity,decreases,transform to Rod,0.01,0.5,4,0
+Intermediate,Pou2f TIF Affinity,decreases,transform to BC,0.01,0.5,4,0
+Intermediate,Pou2f TIF Affinity,decreases,transform to MG,0.01,0.5,4,0
+Intermediate,FoxN4 TIF Affinity,increases,transform to Rod,1.02,0.5,4,0
+Intermediate,FoxN4 TIF Affinity,increases,transform to Cone,1.02,0.5,4,0
+Intermediate,FoxN4 TIF Affinity,increases,transform to AC,1.02,0.5,4,0
+Intermediate,FoxN4 TIF Affinity,increases,transform to HC,1.02,0.5,4,0
+Intermediate,FoxN4 TIF Affinity,decreases,transform to RGC,0.02,0.5,4,0
+Intermediate,miRNA TIF Affinity,decreases,transform to RGC,0.02,0.5,4,0
+Intermediate,Nfi TIF Affinity,increases,transform to Rod,1.03,0.5,4,0
+Intermediate,Nfi TIF Affinity,increases,transform to BC,1.03,0.5,4,0
+Intermediate,Nfi TIF Affinity,increases,transform to MG,1.03,0.5,4,0
+Intermediate,Nfi TIF Affinity,decreases,transform to RGC,0.0,0.5,4,0
+Intermediate,Casz1 TIF Affinity,increases,transform to Rod,1,0.5,4,0
+Intermediate,Casz1 TIF Affinity,increases,transform to BC,1,0.5,4,0
+Intermediate,Casz1 TIF Affinity,decreases,transform to HC,0.0,0.5,4,0
+Intermediate,Casz1 TIF Affinity,decreases,transform to AC,0.0,0.5,4,0
+Intermediate,Casz1 TIF Affinity,decreases,transform to Cone,0.0,0.5,4,0
+Intermediate,Casz1 TIF Affinity,decreases,transform to MG,0.0,0.5,4,0
+Intermediate,Onecut TIF Affinity,increases,transform to RGC,1,0.5,4,0

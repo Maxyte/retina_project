@@ -1,0 +1,11 @@
+RPC,intracellular Rod Quorum,increases,transform to Rod,0.0,0.5,4,0
+RPC,intracellular Cone Quorum,increases,transform to Cone,0.0,0.5,4,0
+RPC,intracellular AC Quorum,increases,transform to AC,0.0,0.5,4,0
+RPC,intracellular BC Quorum,increases,transform to BC,0.0,0.5,4,0
+RPC,intracellular HC Quorum,increases,transform to HC,0.0,0.5,4,0
+RPC,intracellular MG Quorum,increases,transform to MG,0.0,0.5,4,0
+RPC,time,increases,Ikzf1 TIF Affinity secretion,10.0,100,10,0
+RPC,time,decreases,Ikzf1 TIF Affinity secretion,0,3000,10,0
+Intermediate,time,increases,transform to RGC,0.00003,10,6,0
+Intermediate,time,increases,transform to MG,0.000003,10,6,0
+Intermediate,time,increases,transform to HC,0.000003,10,6,0

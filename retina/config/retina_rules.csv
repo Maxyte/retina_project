@@ -1,0 +1,46 @@
+RPC,intracellular Rod Quorum,increases,transform to Rod,0.0,0.5,4,0
+RPC,intracellular Cone Quorum,increases,transform to Cone,0.0,0.5,4,0
+RPC,intracellular AC Quorum,increases,transform to AC,0.0,0.5,4,0
+RPC,intracellular BC Quorum,increases,transform to BC,0.0,0.5,4,0
+RPC,intracellular HC Quorum,increases,transform to HC,0.0,0.5,4,0
+RPC,intracellular MG Quorum,increases,transform to MG,0.0,0.5,4,0
+RPC,time,increases,custom:Ikzf1_TIF,1,500,10,0
+RPC,time,increases,custom:Pou2f_TIF,1,1500,10,0
+RPC,time,increases,custom:Onecut_TIF,1,2500,10,0
+RPC,time,increases,custom:FoxN4_TIF,1,3500,10,0
+RPC,time,increases,custom:miRNA_TIF,1,4500,10,0
+RPC,time,increases,custom:Nfi_TIF,1,5500,10,0
+RPC,time,increases,custom:Casz1_TIF,1,6500,10,0
+RPC,custom:Pou2f_TIF,decreases,custom:Ikzf1_TIF,0.0,0.5,10,0
+RPC,custom:Onecut_TIF,decreases,custom:Pou2f_TIF,0.0,0.5,10,0
+RPC,custom:FoxN4_TIF,decreases,custom:Onecut_TIF,0.0,0.5,10,0
+RPC,custom:miRNA_TIF,decreases,custom:FoxN4_TIF,0.0,0.5,10,0
+RPC,custom:Nfi_TIF,decreases,custom:miRNA_TIF,0.0,0.5,10,0
+RPC,custom:Casz1_TIF,decreases,custom:Nfi_TIF,0.0,0.5,10,0
+Intermediate,custom:Ikzf1_TIF,increases,transform to RGC,0.0,0.5,4,0
+Intermediate,custom:Ikzf1_TIF,increases,transform to AC,0.0,0.5,4,0
+Intermediate,custom:Ikzf1_TIF,increases,transform to HC,0.0,0.5,4,0
+Intermediate,custom:Pou2f_TIF,increases,transform to Cone,0.0,0.5,4,0
+Intermediate,custom:Pou2f_TIF,decreases,transform to Rod,0.0,0.5,4,0
+Intermediate,custom:Pou2f_TIF,decreases,transform to BC,0.0,0.5,4,0
+Intermediate,custom:Pou2f_TIF,decreases,transform to MG,0.0,0.5,4,0
+Intermediate,custom:Onecut_TIF,increases,transform to RGC,0.0,0.5,4,0
+Intermediate,custom:Onecut_TIF,increases,transform to HC,0.0,0.5,4,0
+Intermediate,custom:Onecut_TIF,increases,transform to Cone,0.0,0.5,4,0
+Intermediate,custom:Onecut_TIF,increases,transform to AC,0.0,0.5,4,0
+Intermediate,custom:FoxN4_TIF,increases,transform to Rod,0.0,0.5,4,0
+Intermediate,custom:FoxN4_TIF,increases,transform to Cone,0.0,0.5,4,0
+Intermediate,custom:FoxN4_TIF,increases,transform to AC,0.0,0.5,4,0
+Intermediate,custom:FoxN4_TIF,increases,transform to HC,0.0,0.5,4,0
+Intermediate,custom:FoxN4_TIF,decreases,transform to RGC,0.0,0.5,4,0
+Intermediate,custom:miRNA_TIF,decreases,transform to RGC,0.0,0.5,4,0
+Intermediate,custom:Nfi_TIF,increases,transform to Rod,0.0,0.5,4,0
+Intermediate,custom:Nfi_TIF,increases,transform to BC,0.0,0.5,4,0
+Intermediate,custom:Nfi_TIF,increases,transform to MG,0.0,0.5,4,0
+Intermediate,custom:Nfi_TIF,decreases,transform to RGC,0.0,0.5,4,0
+Intermediate,custom:Casz1_TIF,increases,transform to Rod,0.0,0.5,4,0
+Intermediate,custom:Casz1_TIF,increases,transform to BC,0.0,0.5,4,0
+Intermediate,custom:Casz1_TIF,decreases,transform to HC,0.0,0.5,4,0
+Intermediate,custom:Casz1_TIF,decreases,transform to AC,0.0,0.5,4,0
+Intermediate,custom:Casz1_TIF,decreases,transform to Cone,0.0,0.5,4,0
+Intermediate,custom:Casz1_TIF,decreases,transform to MG,0.0,0.5,4,0
