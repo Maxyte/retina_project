@@ -1,8 +1,6 @@
 [submodule "PhysiCell"]
 	path = PhysiCell
 	url = https://github.com/MathCancer/PhysiCell
-	ignore = dirty
 [submodule "PhysiCell-Studio"]
 	path = PhysiCell-Studio
-	url = https://github.com/PhysiCell-Tools/PhysiCell-Studio.git
-	ignore = dirty
+	url = https://github.com/PhysiCell-Tools/PhysiCell-Studio
