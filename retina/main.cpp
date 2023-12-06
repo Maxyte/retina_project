@@ -74,7 +74,7 @@
 #include <fstream>
 
 #include "./core/PhysiCell.h"
-#include "./modules/PhysiCell_standard_modules.h" 
+#include "./modules/PhysiCell_standard_modules.h"
 
 // put custom code modules here! 
 
@@ -82,7 +82,6 @@
 	
 using namespace BioFVM;
 using namespace PhysiCell;
-
 int main( int argc, char* argv[] )
 {
 	// load and parse settings file(s)

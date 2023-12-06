@@ -1,10 +1,10 @@
 <PhysiCell_settings version="devel-version">
 
     <domain>
-        <x_min>-500</x_min>
-        <x_max>500</x_max>
-        <y_min>-500</y_min>
-        <y_max>500</y_max>
+        <x_min>-700</x_min>
+        <x_max>700</x_max>
+        <y_min>-700</y_min>
+        <y_max>700</y_max>
         <z_min>-10</z_min>
         <z_max>10</z_max>
         <dx>20</dx>
@@ -375,18 +375,16 @@
                         <set_relative_equilibrium_distance enabled="false" units="dimensionless">1.8</set_relative_equilibrium_distance>
                         <set_absolute_equilibrium_distance enabled="false" units="micron">15.12</set_absolute_equilibrium_distance>
                     </options>
-                    <cell_BM_adhesion_strength units="micron/min">4.0</cell_BM_adhesion_strength>
-                    <cell_BM_repulsion_strength units="micron/min">10.0</cell_BM_repulsion_strength>
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
                 </mechanics>
                 <motility>
-                    <speed units="micron/min">0.1</speed>
+                    <speed units="micron/min">0</speed>
                     <persistence_time units="min">1</persistence_time>
                     <migration_bias units="dimensionless">.5</migration_bias>
                     <options>
-                        <enabled>false</enabled>
+                        <enabled>true</enabled>
                         <use_2D>true</use_2D>
                         <chemotaxis>
                             <enabled>false</enabled>
@@ -394,7 +392,7 @@
                             <direction>-1</direction>
                         </chemotaxis>
                         <advanced_chemotaxis>
-                            <enabled>true</enabled>
+                            <enabled>false</enabled>
                             <normalize_each_gradient>true</normalize_each_gradient>
                             <chemotactic_sensitivities>
                                 <chemotactic_sensitivity substrate="Rod Quorum">0.0</chemotactic_sensitivity>
@@ -509,77 +507,74 @@
                     </substrate>
                 </secretion>
                 <cell_interactions>
-                    <dead_phagocytosis_rate units="1/min">0</dead_phagocytosis_rate>
+                    <dead_phagocytosis_rate units="1/min">0.0</dead_phagocytosis_rate>
                     <live_phagocytosis_rates>
-                        <phagocytosis_rate name="Cone" units="1/min">0</phagocytosis_rate>
-                        <phagocytosis_rate name="RGC" units="1/min">0</phagocytosis_rate>
-                        <phagocytosis_rate name="AC" units="1/min">0</phagocytosis_rate>
-                        <phagocytosis_rate name="BC" units="1/min">0</phagocytosis_rate>
-                        <phagocytosis_rate name="HC" units="1/min">0</phagocytosis_rate>
-                        <phagocytosis_rate name="MG" units="1/min">0</phagocytosis_rate>
+                        <phagocytosis_rate name="Cone" units="1/min">0.0</phagocytosis_rate>
+                        <phagocytosis_rate name="RGC" units="1/min">0.0</phagocytosis_rate>
+                        <phagocytosis_rate name="AC" units="1/min">0.0</phagocytosis_rate>
+                        <phagocytosis_rate name="BC" units="1/min">0.0</phagocytosis_rate>
+                        <phagocytosis_rate name="HC" units="1/min">0.0</phagocytosis_rate>
+                        <phagocytosis_rate name="MG" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="RPC" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="Rod" units="1/min">0.0</phagocytosis_rate>
-                        <phagocytosis_rate name="Intermediate" units="1/min">0</phagocytosis_rate>
+                        <phagocytosis_rate name="Intermediate" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="Basal Membrane" units="1/min">0.0</phagocytosis_rate>
                     </live_phagocytosis_rates>
                     <attack_rates>
-                        <attack_rate name="Cone" units="1/min">0</attack_rate>
-                        <attack_rate name="RGC" units="1/min">0</attack_rate>
-                        <attack_rate name="AC" units="1/min">0</attack_rate>
-                        <attack_rate name="BC" units="1/min">0</attack_rate>
-                        <attack_rate name="HC" units="1/min">0</attack_rate>
-                        <attack_rate name="MG" units="1/min">0</attack_rate>
+                        <attack_rate name="Cone" units="1/min">0.0</attack_rate>
+                        <attack_rate name="RGC" units="1/min">0.0</attack_rate>
+                        <attack_rate name="AC" units="1/min">0.0</attack_rate>
+                        <attack_rate name="BC" units="1/min">0.0</attack_rate>
+                        <attack_rate name="HC" units="1/min">0.0</attack_rate>
+                        <attack_rate name="MG" units="1/min">0.0</attack_rate>
                         <attack_rate name="RPC" units="1/min">0.0</attack_rate>
                         <attack_rate name="Rod" units="1/min">0.0</attack_rate>
-                        <attack_rate name="Intermediate" units="1/min">0</attack_rate>
+                        <attack_rate name="Intermediate" units="1/min">0.0</attack_rate>
                         <attack_rate name="Basal Membrane" units="1/min">0.0</attack_rate>
                     </attack_rates>
-                    <damage_rate units="1/min">1</damage_rate>
+                    <damage_rate units="1/min">1.0</damage_rate>
                     <fusion_rates>
-                        <fusion_rate name="Cone" units="1/min">0</fusion_rate>
-                        <fusion_rate name="RGC" units="1/min">0</fusion_rate>
-                        <fusion_rate name="AC" units="1/min">0</fusion_rate>
-                        <fusion_rate name="BC" units="1/min">0</fusion_rate>
-                        <fusion_rate name="HC" units="1/min">0</fusion_rate>
-                        <fusion_rate name="MG" units="1/min">0</fusion_rate>
+                        <fusion_rate name="Cone" units="1/min">0.0</fusion_rate>
+                        <fusion_rate name="RGC" units="1/min">0.0</fusion_rate>
+                        <fusion_rate name="AC" units="1/min">0.0</fusion_rate>
+                        <fusion_rate name="BC" units="1/min">0.0</fusion_rate>
+                        <fusion_rate name="HC" units="1/min">0.0</fusion_rate>
+                        <fusion_rate name="MG" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="RPC" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="Rod" units="1/min">0.0</fusion_rate>
-                        <fusion_rate name="Intermediate" units="1/min">0</fusion_rate>
+                        <fusion_rate name="Intermediate" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="Basal Membrane" units="1/min">0.0</fusion_rate>
                     </fusion_rates>
                 </cell_interactions>
                 <cell_transformations>
                     <transformation_rates>
-                        <transformation_rate name="Cone" units="1/min">0</transformation_rate>
-                        <transformation_rate name="RGC" units="1/min">0</transformation_rate>
-                        <transformation_rate name="AC" units="1/min">0</transformation_rate>
-                        <transformation_rate name="BC" units="1/min">0</transformation_rate>
-                        <transformation_rate name="HC" units="1/min">0</transformation_rate>
-                        <transformation_rate name="MG" units="1/min">0</transformation_rate>
+                        <transformation_rate name="Cone" units="1/min">0.0</transformation_rate>
+                        <transformation_rate name="RGC" units="1/min">0.0</transformation_rate>
+                        <transformation_rate name="AC" units="1/min">0.0</transformation_rate>
+                        <transformation_rate name="BC" units="1/min">0.0</transformation_rate>
+                        <transformation_rate name="HC" units="1/min">0.0</transformation_rate>
+                        <transformation_rate name="MG" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="RPC" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="Rod" units="1/min">0.0</transformation_rate>
-                        <transformation_rate name="Intermediate" units="1/min">0</transformation_rate>
+                        <transformation_rate name="Intermediate" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="Basal Membrane" units="1/min">0.0</transformation_rate>
                     </transformation_rates>
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <Ikzf1_TIF conserved="false" units="" description="">0.0</Ikzf1_TIF>
-                <Pou2f_TIF conserved="false" units="" description="">0.0</Pou2f_TIF>
-                <Onecut_TIF conserved="false" units="" description="">0.0</Onecut_TIF>
-                <FoxN4_TIF conserved="false" units="" description="">0.0</FoxN4_TIF>
-                <miRNA_TIF conserved="false" units="" description="">0.0</miRNA_TIF>
-                <Nfi_TIF conserved="false" units="" description="">0.0</Nfi_TIF>
-                <Casz1_TIF conserved="false" units="" description="">0.0</Casz1_TIF>
                 <cell_age conserved="false" units="" description="">0.0</cell_age>
-                <migration_state_length conserved="false" units="" description="">0.0</migration_state_length>
-                <RGC_competency conserved="false" units="" description="">0.142</RGC_competency>
-                <AC_competency conserved="false" units="" description="">0.142</AC_competency>
-                <BC_competency conserved="false" units="" description="">0.142</BC_competency>
-                <HC_competency conserved="false" units="" description="">0.142</HC_competency>
-                <MG_competency conserved="false" units="" description="">0.142</MG_competency>
-                <Cone_competency conserved="false" units="" description="">0.142</Cone_competency>
-                <Rod_competency conserved="false" units="" description="">0.142</Rod_competency>
+                <migration_state_length conserved="false" units="" description="">1000</migration_state_length>
+                <RGC_competence conserved="false" units="" description="">0.0</RGC_competence>
+                <AC_competence conserved="false" units="" description="">0.0</AC_competence>
+                <BC_competence conserved="false" units="" description="">0.0</BC_competence>
+                <HC_competence conserved="false" units="" description="">0.0</HC_competence>
+                <MG_competence conserved="false" units="" description="">0.0</MG_competence>
+                <Cone_competence conserved="false" units="" description="">0.0</Cone_competence>
+                <Rod_competence conserved="false" units="" description="">0.0</Rod_competence>
+                <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
+                <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
+                <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
+                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
             </custom_data>
         </cell_definition>
         <cell_definition name="Cone" ID="1">
@@ -651,26 +646,24 @@
                         <set_relative_equilibrium_distance enabled="false" units="dimensionless">1.8</set_relative_equilibrium_distance>
                         <set_absolute_equilibrium_distance enabled="false" units="micron">15.12</set_absolute_equilibrium_distance>
                     </options>
-                    <cell_BM_adhesion_strength units="micron/min">4.0</cell_BM_adhesion_strength>
-                    <cell_BM_repulsion_strength units="micron/min">10.0</cell_BM_repulsion_strength>
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
                 </mechanics>
                 <motility>
-                    <speed units="micron/min">1</speed>
+                    <speed units="micron/min">0</speed>
                     <persistence_time units="min">1</persistence_time>
                     <migration_bias units="dimensionless">.5</migration_bias>
                     <options>
-                        <enabled>false</enabled>
+                        <enabled>true</enabled>
                         <use_2D>true</use_2D>
                         <chemotaxis>
-                            <enabled>false</enabled>
-                            <substrate>Rod Quorum</substrate>
+                            <enabled>true</enabled>
+                            <substrate>Cone Quorum</substrate>
                             <direction>1</direction>
                         </chemotaxis>
                         <advanced_chemotaxis>
-                            <enabled>true</enabled>
+                            <enabled>false</enabled>
                             <normalize_each_gradient>false</normalize_each_gradient>
                             <chemotactic_sensitivities>
                                 <chemotactic_sensitivity substrate="Rod Quorum">1.0</chemotactic_sensitivity>
@@ -700,8 +693,8 @@
                         <net_export_rate units="total substrate/min">0.0</net_export_rate>
                     </substrate>
                     <substrate name="Cone Quorum">
-                        <secretion_rate units="1/min">1</secretion_rate>
-                        <secretion_target units="substrate density">0.01</secretion_target>
+                        <secretion_rate units="1/min">0.0</secretion_rate>
+                        <secretion_target units="substrate density">0.0</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
                         <net_export_rate units="total substrate/min">0.0</net_export_rate>
                     </substrate>
@@ -795,7 +788,7 @@
                         <phagocytosis_rate name="MG" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="RPC" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="Rod" units="1/min">0.0</phagocytosis_rate>
-                        <phagocytosis_rate name="Intermediate" units="1/min">0</phagocytosis_rate>
+                        <phagocytosis_rate name="Intermediate" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="Basal Membrane" units="1/min">0.0</phagocytosis_rate>
                     </live_phagocytosis_rates>
                     <attack_rates>
@@ -807,7 +800,7 @@
                         <attack_rate name="MG" units="1/min">0</attack_rate>
                         <attack_rate name="RPC" units="1/min">0.0</attack_rate>
                         <attack_rate name="Rod" units="1/min">0.0</attack_rate>
-                        <attack_rate name="Intermediate" units="1/min">0</attack_rate>
+                        <attack_rate name="Intermediate" units="1/min">0.0</attack_rate>
                         <attack_rate name="Basal Membrane" units="1/min">0.0</attack_rate>
                     </attack_rates>
                     <damage_rate units="1/min">1</damage_rate>
@@ -820,7 +813,7 @@
                         <fusion_rate name="MG" units="1/min">0</fusion_rate>
                         <fusion_rate name="RPC" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="Rod" units="1/min">0.0</fusion_rate>
-                        <fusion_rate name="Intermediate" units="1/min">0</fusion_rate>
+                        <fusion_rate name="Intermediate" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="Basal Membrane" units="1/min">0.0</fusion_rate>
                     </fusion_rates>
                 </cell_interactions>
@@ -834,28 +827,25 @@
                         <transformation_rate name="MG" units="1/min">0</transformation_rate>
                         <transformation_rate name="RPC" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="Rod" units="1/min">0.0</transformation_rate>
-                        <transformation_rate name="Intermediate" units="1/min">0</transformation_rate>
+                        <transformation_rate name="Intermediate" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="Basal Membrane" units="1/min">0.0</transformation_rate>
                     </transformation_rates>
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <Ikzf1_TIF conserved="false" units="" description="">0.0</Ikzf1_TIF>
-                <Pou2f_TIF conserved="false" units="" description="">0.0</Pou2f_TIF>
-                <Onecut_TIF conserved="false" units="" description="">0.0</Onecut_TIF>
-                <FoxN4_TIF conserved="false" units="" description="">0.0</FoxN4_TIF>
-                <miRNA_TIF conserved="false" units="" description="">0.0</miRNA_TIF>
-                <Nfi_TIF conserved="false" units="" description="">0.0</Nfi_TIF>
-                <Casz1_TIF conserved="false" units="" description="">0.0</Casz1_TIF>
                 <cell_age conserved="false" units="" description="">0.0</cell_age>
-                <migration_state_length conserved="false" units="" description="">0.0</migration_state_length>
-                <RGC_competency conserved="false" units="" description="">0.0</RGC_competency>
-                <AC_competency conserved="false" units="" description="">0.0</AC_competency>
-                <BC_competency conserved="false" units="" description="">0.0</BC_competency>
-                <HC_competency conserved="false" units="" description="">0.0</HC_competency>
-                <MG_competency conserved="false" units="" description="">0.0</MG_competency>
-                <Cone_competency conserved="false" units="" description="">0.0</Cone_competency>
-                <Rod_competency conserved="false" units="" description="">0.0</Rod_competency>
+                <migration_state_length conserved="false" units="" description="">1000</migration_state_length>
+                <RGC_competence conserved="false" units="" description="">0.0</RGC_competence>
+                <AC_competence conserved="false" units="" description="">0.0</AC_competence>
+                <BC_competence conserved="false" units="" description="">0.0</BC_competence>
+                <HC_competence conserved="false" units="" description="">0.0</HC_competence>
+                <MG_competence conserved="false" units="" description="">0.0</MG_competence>
+                <Cone_competence conserved="false" units="" description="">0.0</Cone_competence>
+                <Rod_competence conserved="false" units="" description="">0.0</Rod_competence>
+                <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
+                <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
+                <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
+                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
             </custom_data>
         </cell_definition>
         <cell_definition name="RGC" ID="2">
@@ -927,18 +917,16 @@
                         <set_relative_equilibrium_distance enabled="false" units="dimensionless">1.8</set_relative_equilibrium_distance>
                         <set_absolute_equilibrium_distance enabled="false" units="micron">15.12</set_absolute_equilibrium_distance>
                     </options>
-                    <cell_BM_adhesion_strength units="micron/min">4.0</cell_BM_adhesion_strength>
-                    <cell_BM_repulsion_strength units="micron/min">10.0</cell_BM_repulsion_strength>
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
                 </mechanics>
                 <motility>
-                    <speed units="micron/min">0.21</speed>
+                    <speed units="micron/min">0</speed>
                     <persistence_time units="min">1</persistence_time>
                     <migration_bias units="dimensionless">.5</migration_bias>
                     <options>
-                        <enabled>false</enabled>
+                        <enabled>true</enabled>
                         <use_2D>true</use_2D>
                         <chemotaxis>
                             <enabled>false</enabled>
@@ -982,7 +970,7 @@
                         <net_export_rate units="total substrate/min">0.0</net_export_rate>
                     </substrate>
                     <substrate name="RGC Quorum">
-                        <secretion_rate units="1/min">1</secretion_rate>
+                        <secretion_rate units="1/min">0.0</secretion_rate>
                         <secretion_target units="substrate density">0.01</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
                         <net_export_rate units="total substrate/min">0.0</net_export_rate>
@@ -1071,7 +1059,7 @@
                         <phagocytosis_rate name="MG" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="RPC" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="Rod" units="1/min">0.0</phagocytosis_rate>
-                        <phagocytosis_rate name="Intermediate" units="1/min">0</phagocytosis_rate>
+                        <phagocytosis_rate name="Intermediate" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="Basal Membrane" units="1/min">0.0</phagocytosis_rate>
                     </live_phagocytosis_rates>
                     <attack_rates>
@@ -1083,7 +1071,7 @@
                         <attack_rate name="MG" units="1/min">0</attack_rate>
                         <attack_rate name="RPC" units="1/min">0.0</attack_rate>
                         <attack_rate name="Rod" units="1/min">0.0</attack_rate>
-                        <attack_rate name="Intermediate" units="1/min">0</attack_rate>
+                        <attack_rate name="Intermediate" units="1/min">0.0</attack_rate>
                         <attack_rate name="Basal Membrane" units="1/min">0.0</attack_rate>
                     </attack_rates>
                     <damage_rate units="1/min">1</damage_rate>
@@ -1096,7 +1084,7 @@
                         <fusion_rate name="MG" units="1/min">0</fusion_rate>
                         <fusion_rate name="RPC" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="Rod" units="1/min">0.0</fusion_rate>
-                        <fusion_rate name="Intermediate" units="1/min">0</fusion_rate>
+                        <fusion_rate name="Intermediate" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="Basal Membrane" units="1/min">0.0</fusion_rate>
                     </fusion_rates>
                 </cell_interactions>
@@ -1110,28 +1098,25 @@
                         <transformation_rate name="MG" units="1/min">0</transformation_rate>
                         <transformation_rate name="RPC" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="Rod" units="1/min">0.0</transformation_rate>
-                        <transformation_rate name="Intermediate" units="1/min">0</transformation_rate>
+                        <transformation_rate name="Intermediate" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="Basal Membrane" units="1/min">0.0</transformation_rate>
                     </transformation_rates>
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <Ikzf1_TIF conserved="false" units="" description="">0.0</Ikzf1_TIF>
-                <Pou2f_TIF conserved="false" units="" description="">0.0</Pou2f_TIF>
-                <Onecut_TIF conserved="false" units="" description="">0.0</Onecut_TIF>
-                <FoxN4_TIF conserved="false" units="" description="">0.0</FoxN4_TIF>
-                <miRNA_TIF conserved="false" units="" description="">0.0</miRNA_TIF>
-                <Nfi_TIF conserved="false" units="" description="">0.0</Nfi_TIF>
-                <Casz1_TIF conserved="false" units="" description="">0.0</Casz1_TIF>
                 <cell_age conserved="false" units="" description="">0.0</cell_age>
-                <migration_state_length conserved="true" units="" description="">200</migration_state_length>
-                <RGC_competency conserved="false" units="" description="">0.0</RGC_competency>
-                <AC_competency conserved="false" units="" description="">0.0</AC_competency>
-                <BC_competency conserved="false" units="" description="">0.0</BC_competency>
-                <HC_competency conserved="false" units="" description="">0.0</HC_competency>
-                <MG_competency conserved="false" units="" description="">0.0</MG_competency>
-                <Cone_competency conserved="false" units="" description="">0.0</Cone_competency>
-                <Rod_competency conserved="false" units="" description="">0.0</Rod_competency>
+                <migration_state_length conserved="false" units="" description="">1000</migration_state_length>
+                <RGC_competence conserved="false" units="" description="">0.0</RGC_competence>
+                <AC_competence conserved="false" units="" description="">0.0</AC_competence>
+                <BC_competence conserved="false" units="" description="">0.0</BC_competence>
+                <HC_competence conserved="false" units="" description="">0.0</HC_competence>
+                <MG_competence conserved="false" units="" description="">0.0</MG_competence>
+                <Cone_competence conserved="false" units="" description="">0.0</Cone_competence>
+                <Rod_competence conserved="false" units="" description="">0.0</Rod_competence>
+                <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
+                <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
+                <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
+                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
             </custom_data>
         </cell_definition>
         <cell_definition name="AC" ID="3">
@@ -1203,18 +1188,16 @@
                         <set_relative_equilibrium_distance enabled="false" units="dimensionless">1.8</set_relative_equilibrium_distance>
                         <set_absolute_equilibrium_distance enabled="false" units="micron">15.12</set_absolute_equilibrium_distance>
                     </options>
-                    <cell_BM_adhesion_strength units="micron/min">4.0</cell_BM_adhesion_strength>
-                    <cell_BM_repulsion_strength units="micron/min">10.0</cell_BM_repulsion_strength>
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
                 </mechanics>
                 <motility>
-                    <speed units="micron/min">1</speed>
+                    <speed units="micron/min">0</speed>
                     <persistence_time units="min">1</persistence_time>
                     <migration_bias units="dimensionless">.5</migration_bias>
                     <options>
-                        <enabled>false</enabled>
+                        <enabled>true</enabled>
                         <use_2D>true</use_2D>
                         <chemotaxis>
                             <enabled>false</enabled>
@@ -1264,7 +1247,7 @@
                         <net_export_rate units="total substrate/min">0.0</net_export_rate>
                     </substrate>
                     <substrate name="AC Quorum">
-                        <secretion_rate units="1/min">1</secretion_rate>
+                        <secretion_rate units="1/min">0.0</secretion_rate>
                         <secretion_target units="substrate density">0.01</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
                         <net_export_rate units="total substrate/min">0.0</net_export_rate>
@@ -1347,7 +1330,7 @@
                         <phagocytosis_rate name="MG" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="RPC" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="Rod" units="1/min">0.0</phagocytosis_rate>
-                        <phagocytosis_rate name="Intermediate" units="1/min">0</phagocytosis_rate>
+                        <phagocytosis_rate name="Intermediate" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="Basal Membrane" units="1/min">0.0</phagocytosis_rate>
                     </live_phagocytosis_rates>
                     <attack_rates>
@@ -1359,7 +1342,7 @@
                         <attack_rate name="MG" units="1/min">0</attack_rate>
                         <attack_rate name="RPC" units="1/min">0.0</attack_rate>
                         <attack_rate name="Rod" units="1/min">0.0</attack_rate>
-                        <attack_rate name="Intermediate" units="1/min">0</attack_rate>
+                        <attack_rate name="Intermediate" units="1/min">0.0</attack_rate>
                         <attack_rate name="Basal Membrane" units="1/min">0.0</attack_rate>
                     </attack_rates>
                     <damage_rate units="1/min">1</damage_rate>
@@ -1372,7 +1355,7 @@
                         <fusion_rate name="MG" units="1/min">0</fusion_rate>
                         <fusion_rate name="RPC" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="Rod" units="1/min">0.0</fusion_rate>
-                        <fusion_rate name="Intermediate" units="1/min">0</fusion_rate>
+                        <fusion_rate name="Intermediate" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="Basal Membrane" units="1/min">0.0</fusion_rate>
                     </fusion_rates>
                 </cell_interactions>
@@ -1386,28 +1369,25 @@
                         <transformation_rate name="MG" units="1/min">0</transformation_rate>
                         <transformation_rate name="RPC" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="Rod" units="1/min">0.0</transformation_rate>
-                        <transformation_rate name="Intermediate" units="1/min">0</transformation_rate>
+                        <transformation_rate name="Intermediate" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="Basal Membrane" units="1/min">0.0</transformation_rate>
                     </transformation_rates>
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <Ikzf1_TIF conserved="false" units="" description="">0.0</Ikzf1_TIF>
-                <Pou2f_TIF conserved="false" units="" description="">0.0</Pou2f_TIF>
-                <Onecut_TIF conserved="false" units="" description="">0.0</Onecut_TIF>
-                <FoxN4_TIF conserved="false" units="" description="">0.0</FoxN4_TIF>
-                <miRNA_TIF conserved="false" units="" description="">0.0</miRNA_TIF>
-                <Nfi_TIF conserved="false" units="" description="">0.0</Nfi_TIF>
-                <Casz1_TIF conserved="false" units="" description="">0.0</Casz1_TIF>
                 <cell_age conserved="false" units="" description="">0.0</cell_age>
-                <migration_state_length conserved="false" units="" description="">0.0</migration_state_length>
-                <RGC_competency conserved="false" units="" description="">0.0</RGC_competency>
-                <AC_competency conserved="false" units="" description="">0.0</AC_competency>
-                <BC_competency conserved="false" units="" description="">0.0</BC_competency>
-                <HC_competency conserved="false" units="" description="">0.0</HC_competency>
-                <MG_competency conserved="false" units="" description="">0.0</MG_competency>
-                <Cone_competency conserved="false" units="" description="">0.0</Cone_competency>
-                <Rod_competency conserved="false" units="" description="">0.0</Rod_competency>
+                <migration_state_length conserved="false" units="" description="">1000</migration_state_length>
+                <RGC_competence conserved="false" units="" description="">0.0</RGC_competence>
+                <AC_competence conserved="false" units="" description="">0.0</AC_competence>
+                <BC_competence conserved="false" units="" description="">0.0</BC_competence>
+                <HC_competence conserved="false" units="" description="">0.0</HC_competence>
+                <MG_competence conserved="false" units="" description="">0.0</MG_competence>
+                <Cone_competence conserved="false" units="" description="">0.0</Cone_competence>
+                <Rod_competence conserved="false" units="" description="">0.0</Rod_competence>
+                <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
+                <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
+                <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
+                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
             </custom_data>
         </cell_definition>
         <cell_definition name="BC" ID="4">
@@ -1479,18 +1459,16 @@
                         <set_relative_equilibrium_distance enabled="false" units="dimensionless">1.8</set_relative_equilibrium_distance>
                         <set_absolute_equilibrium_distance enabled="false" units="micron">15.12</set_absolute_equilibrium_distance>
                     </options>
-                    <cell_BM_adhesion_strength units="micron/min">4.0</cell_BM_adhesion_strength>
-                    <cell_BM_repulsion_strength units="micron/min">10.0</cell_BM_repulsion_strength>
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
                 </mechanics>
                 <motility>
-                    <speed units="micron/min">1</speed>
+                    <speed units="micron/min">0</speed>
                     <persistence_time units="min">1</persistence_time>
                     <migration_bias units="dimensionless">.5</migration_bias>
                     <options>
-                        <enabled>false</enabled>
+                        <enabled>true</enabled>
                         <use_2D>true</use_2D>
                         <chemotaxis>
                             <enabled>false</enabled>
@@ -1546,7 +1524,7 @@
                         <net_export_rate units="total substrate/min">0.0</net_export_rate>
                     </substrate>
                     <substrate name="BC Quorum">
-                        <secretion_rate units="1/min">1</secretion_rate>
+                        <secretion_rate units="1/min">0.0</secretion_rate>
                         <secretion_target units="substrate density">0.01</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
                         <net_export_rate units="total substrate/min">0.0</net_export_rate>
@@ -1623,7 +1601,7 @@
                         <phagocytosis_rate name="MG" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="RPC" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="Rod" units="1/min">0.0</phagocytosis_rate>
-                        <phagocytosis_rate name="Intermediate" units="1/min">0</phagocytosis_rate>
+                        <phagocytosis_rate name="Intermediate" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="Basal Membrane" units="1/min">0.0</phagocytosis_rate>
                     </live_phagocytosis_rates>
                     <attack_rates>
@@ -1635,7 +1613,7 @@
                         <attack_rate name="MG" units="1/min">0</attack_rate>
                         <attack_rate name="RPC" units="1/min">0.0</attack_rate>
                         <attack_rate name="Rod" units="1/min">0.0</attack_rate>
-                        <attack_rate name="Intermediate" units="1/min">0</attack_rate>
+                        <attack_rate name="Intermediate" units="1/min">0.0</attack_rate>
                         <attack_rate name="Basal Membrane" units="1/min">0.0</attack_rate>
                     </attack_rates>
                     <damage_rate units="1/min">1</damage_rate>
@@ -1648,7 +1626,7 @@
                         <fusion_rate name="MG" units="1/min">0</fusion_rate>
                         <fusion_rate name="RPC" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="Rod" units="1/min">0.0</fusion_rate>
-                        <fusion_rate name="Intermediate" units="1/min">0</fusion_rate>
+                        <fusion_rate name="Intermediate" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="Basal Membrane" units="1/min">0.0</fusion_rate>
                     </fusion_rates>
                 </cell_interactions>
@@ -1662,28 +1640,25 @@
                         <transformation_rate name="MG" units="1/min">0</transformation_rate>
                         <transformation_rate name="RPC" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="Rod" units="1/min">0.0</transformation_rate>
-                        <transformation_rate name="Intermediate" units="1/min">0</transformation_rate>
+                        <transformation_rate name="Intermediate" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="Basal Membrane" units="1/min">0.0</transformation_rate>
                     </transformation_rates>
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <Ikzf1_TIF conserved="false" units="" description="">0.0</Ikzf1_TIF>
-                <Pou2f_TIF conserved="false" units="" description="">0.0</Pou2f_TIF>
-                <Onecut_TIF conserved="false" units="" description="">0.0</Onecut_TIF>
-                <FoxN4_TIF conserved="false" units="" description="">0.0</FoxN4_TIF>
-                <miRNA_TIF conserved="false" units="" description="">0.0</miRNA_TIF>
-                <Nfi_TIF conserved="false" units="" description="">0.0</Nfi_TIF>
-                <Casz1_TIF conserved="false" units="" description="">0.0</Casz1_TIF>
                 <cell_age conserved="false" units="" description="">0.0</cell_age>
-                <migration_state_length conserved="false" units="" description="">0.0</migration_state_length>
-                <RGC_competency conserved="false" units="" description="">0.0</RGC_competency>
-                <AC_competency conserved="false" units="" description="">0.0</AC_competency>
-                <BC_competency conserved="false" units="" description="">0.0</BC_competency>
-                <HC_competency conserved="false" units="" description="">0.0</HC_competency>
-                <MG_competency conserved="false" units="" description="">0.0</MG_competency>
-                <Cone_competency conserved="false" units="" description="">0.0</Cone_competency>
-                <Rod_competency conserved="false" units="" description="">0.0</Rod_competency>
+                <migration_state_length conserved="false" units="" description="">1000</migration_state_length>
+                <RGC_competence conserved="false" units="" description="">0.0</RGC_competence>
+                <AC_competence conserved="false" units="" description="">0.0</AC_competence>
+                <BC_competence conserved="false" units="" description="">0.0</BC_competence>
+                <HC_competence conserved="false" units="" description="">0.0</HC_competence>
+                <MG_competence conserved="false" units="" description="">0.0</MG_competence>
+                <Cone_competence conserved="false" units="" description="">0.0</Cone_competence>
+                <Rod_competence conserved="false" units="" description="">0.0</Rod_competence>
+                <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
+                <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
+                <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
+                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
             </custom_data>
         </cell_definition>
         <cell_definition name="HC" ID="5">
@@ -1755,18 +1730,16 @@
                         <set_relative_equilibrium_distance enabled="false" units="dimensionless">1.8</set_relative_equilibrium_distance>
                         <set_absolute_equilibrium_distance enabled="false" units="micron">15.12</set_absolute_equilibrium_distance>
                     </options>
-                    <cell_BM_adhesion_strength units="micron/min">4.0</cell_BM_adhesion_strength>
-                    <cell_BM_repulsion_strength units="micron/min">10.0</cell_BM_repulsion_strength>
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
                 </mechanics>
                 <motility>
-                    <speed units="micron/min">1</speed>
+                    <speed units="micron/min">0</speed>
                     <persistence_time units="min">1</persistence_time>
                     <migration_bias units="dimensionless">.5</migration_bias>
                     <options>
-                        <enabled>false</enabled>
+                        <enabled>true</enabled>
                         <use_2D>true</use_2D>
                         <chemotaxis>
                             <enabled>false</enabled>
@@ -1828,7 +1801,7 @@
                         <net_export_rate units="total substrate/min">0.0</net_export_rate>
                     </substrate>
                     <substrate name="HC Quorum">
-                        <secretion_rate units="1/min">1</secretion_rate>
+                        <secretion_rate units="1/min">0.0</secretion_rate>
                         <secretion_target units="substrate density">0.01</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
                         <net_export_rate units="total substrate/min">0.0</net_export_rate>
@@ -1899,7 +1872,7 @@
                         <phagocytosis_rate name="MG" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="RPC" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="Rod" units="1/min">0.0</phagocytosis_rate>
-                        <phagocytosis_rate name="Intermediate" units="1/min">0</phagocytosis_rate>
+                        <phagocytosis_rate name="Intermediate" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="Basal Membrane" units="1/min">0.0</phagocytosis_rate>
                     </live_phagocytosis_rates>
                     <attack_rates>
@@ -1911,7 +1884,7 @@
                         <attack_rate name="MG" units="1/min">0</attack_rate>
                         <attack_rate name="RPC" units="1/min">0.0</attack_rate>
                         <attack_rate name="Rod" units="1/min">0.0</attack_rate>
-                        <attack_rate name="Intermediate" units="1/min">0</attack_rate>
+                        <attack_rate name="Intermediate" units="1/min">0.0</attack_rate>
                         <attack_rate name="Basal Membrane" units="1/min">0.0</attack_rate>
                     </attack_rates>
                     <damage_rate units="1/min">1</damage_rate>
@@ -1924,7 +1897,7 @@
                         <fusion_rate name="MG" units="1/min">0</fusion_rate>
                         <fusion_rate name="RPC" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="Rod" units="1/min">0.0</fusion_rate>
-                        <fusion_rate name="Intermediate" units="1/min">0</fusion_rate>
+                        <fusion_rate name="Intermediate" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="Basal Membrane" units="1/min">0.0</fusion_rate>
                     </fusion_rates>
                 </cell_interactions>
@@ -1938,28 +1911,25 @@
                         <transformation_rate name="MG" units="1/min">0</transformation_rate>
                         <transformation_rate name="RPC" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="Rod" units="1/min">0.0</transformation_rate>
-                        <transformation_rate name="Intermediate" units="1/min">0</transformation_rate>
+                        <transformation_rate name="Intermediate" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="Basal Membrane" units="1/min">0.0</transformation_rate>
                     </transformation_rates>
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <Ikzf1_TIF conserved="false" units="" description="">0.0</Ikzf1_TIF>
-                <Pou2f_TIF conserved="false" units="" description="">0.0</Pou2f_TIF>
-                <Onecut_TIF conserved="false" units="" description="">0.0</Onecut_TIF>
-                <FoxN4_TIF conserved="false" units="" description="">0.0</FoxN4_TIF>
-                <miRNA_TIF conserved="false" units="" description="">0.0</miRNA_TIF>
-                <Nfi_TIF conserved="false" units="" description="">0.0</Nfi_TIF>
-                <Casz1_TIF conserved="false" units="" description="">0.0</Casz1_TIF>
                 <cell_age conserved="false" units="" description="">0.0</cell_age>
-                <migration_state_length conserved="false" units="" description="">0.0</migration_state_length>
-                <RGC_competency conserved="false" units="" description="">0.0</RGC_competency>
-                <AC_competency conserved="false" units="" description="">0.0</AC_competency>
-                <BC_competency conserved="false" units="" description="">0.0</BC_competency>
-                <HC_competency conserved="false" units="" description="">0.0</HC_competency>
-                <MG_competency conserved="false" units="" description="">0.0</MG_competency>
-                <Cone_competency conserved="false" units="" description="">0.0</Cone_competency>
-                <Rod_competency conserved="false" units="" description="">0.0</Rod_competency>
+                <migration_state_length conserved="false" units="" description="">1000</migration_state_length>
+                <RGC_competence conserved="false" units="" description="">0.0</RGC_competence>
+                <AC_competence conserved="false" units="" description="">0.0</AC_competence>
+                <BC_competence conserved="false" units="" description="">0.0</BC_competence>
+                <HC_competence conserved="false" units="" description="">0.0</HC_competence>
+                <MG_competence conserved="false" units="" description="">0.0</MG_competence>
+                <Cone_competence conserved="false" units="" description="">0.0</Cone_competence>
+                <Rod_competence conserved="false" units="" description="">0.0</Rod_competence>
+                <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
+                <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
+                <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
+                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
             </custom_data>
         </cell_definition>
         <cell_definition name="MG" ID="6">
@@ -2031,18 +2001,16 @@
                         <set_relative_equilibrium_distance enabled="false" units="dimensionless">1.8</set_relative_equilibrium_distance>
                         <set_absolute_equilibrium_distance enabled="false" units="micron">15.12</set_absolute_equilibrium_distance>
                     </options>
-                    <cell_BM_adhesion_strength units="micron/min">4.0</cell_BM_adhesion_strength>
-                    <cell_BM_repulsion_strength units="micron/min">10.0</cell_BM_repulsion_strength>
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
                 </mechanics>
                 <motility>
-                    <speed units="micron/min">1</speed>
+                    <speed units="micron/min">0</speed>
                     <persistence_time units="min">1</persistence_time>
                     <migration_bias units="dimensionless">.5</migration_bias>
                     <options>
-                        <enabled>false</enabled>
+                        <enabled>true</enabled>
                         <use_2D>true</use_2D>
                         <chemotaxis>
                             <enabled>false</enabled>
@@ -2110,7 +2078,7 @@
                         <net_export_rate units="total substrate/min">0.0</net_export_rate>
                     </substrate>
                     <substrate name="MG Quorum">
-                        <secretion_rate units="1/min">1</secretion_rate>
+                        <secretion_rate units="1/min">0.0</secretion_rate>
                         <secretion_target units="substrate density">0.01</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
                         <net_export_rate units="total substrate/min">0.0</net_export_rate>
@@ -2175,7 +2143,7 @@
                         <phagocytosis_rate name="MG" units="1/min">0</phagocytosis_rate>
                         <phagocytosis_rate name="RPC" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="Rod" units="1/min">0.0</phagocytosis_rate>
-                        <phagocytosis_rate name="Intermediate" units="1/min">0</phagocytosis_rate>
+                        <phagocytosis_rate name="Intermediate" units="1/min">0.0</phagocytosis_rate>
                         <phagocytosis_rate name="Basal Membrane" units="1/min">0.0</phagocytosis_rate>
                     </live_phagocytosis_rates>
                     <attack_rates>
@@ -2187,7 +2155,7 @@
                         <attack_rate name="MG" units="1/min">0</attack_rate>
                         <attack_rate name="RPC" units="1/min">0.0</attack_rate>
                         <attack_rate name="Rod" units="1/min">0.0</attack_rate>
-                        <attack_rate name="Intermediate" units="1/min">0</attack_rate>
+                        <attack_rate name="Intermediate" units="1/min">0.0</attack_rate>
                         <attack_rate name="Basal Membrane" units="1/min">0.0</attack_rate>
                     </attack_rates>
                     <damage_rate units="1/min">1</damage_rate>
@@ -2200,7 +2168,7 @@
                         <fusion_rate name="MG" units="1/min">0</fusion_rate>
                         <fusion_rate name="RPC" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="Rod" units="1/min">0.0</fusion_rate>
-                        <fusion_rate name="Intermediate" units="1/min">0</fusion_rate>
+                        <fusion_rate name="Intermediate" units="1/min">0.0</fusion_rate>
                         <fusion_rate name="Basal Membrane" units="1/min">0.0</fusion_rate>
                     </fusion_rates>
                 </cell_interactions>
@@ -2214,35 +2182,32 @@
                         <transformation_rate name="MG" units="1/min">0</transformation_rate>
                         <transformation_rate name="RPC" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="Rod" units="1/min">0.0</transformation_rate>
-                        <transformation_rate name="Intermediate" units="1/min">0</transformation_rate>
+                        <transformation_rate name="Intermediate" units="1/min">0.0</transformation_rate>
                         <transformation_rate name="Basal Membrane" units="1/min">0.0</transformation_rate>
                     </transformation_rates>
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <Ikzf1_TIF conserved="false" units="" description="">0.0</Ikzf1_TIF>
-                <Pou2f_TIF conserved="false" units="" description="">0.0</Pou2f_TIF>
-                <Onecut_TIF conserved="false" units="" description="">0.0</Onecut_TIF>
-                <FoxN4_TIF conserved="false" units="" description="">0.0</FoxN4_TIF>
-                <miRNA_TIF conserved="false" units="" description="">0.0</miRNA_TIF>
-                <Nfi_TIF conserved="false" units="" description="">0.0</Nfi_TIF>
-                <Casz1_TIF conserved="false" units="" description="">0.0</Casz1_TIF>
                 <cell_age conserved="false" units="" description="">0.0</cell_age>
-                <migration_state_length conserved="false" units="" description="">0.0</migration_state_length>
-                <RGC_competency conserved="false" units="" description="">0.0</RGC_competency>
-                <AC_competency conserved="false" units="" description="">0.0</AC_competency>
-                <BC_competency conserved="false" units="" description="">0.0</BC_competency>
-                <HC_competency conserved="false" units="" description="">0.0</HC_competency>
-                <MG_competency conserved="false" units="" description="">0.0</MG_competency>
-                <Cone_competency conserved="false" units="" description="">0.0</Cone_competency>
-                <Rod_competency conserved="false" units="" description="">0.0</Rod_competency>
+                <migration_state_length conserved="false" units="" description="">1000</migration_state_length>
+                <RGC_competence conserved="false" units="" description="">0.0</RGC_competence>
+                <AC_competence conserved="false" units="" description="">0.0</AC_competence>
+                <BC_competence conserved="false" units="" description="">0.0</BC_competence>
+                <HC_competence conserved="false" units="" description="">0.0</HC_competence>
+                <MG_competence conserved="false" units="" description="">0.0</MG_competence>
+                <Cone_competence conserved="false" units="" description="">0.0</Cone_competence>
+                <Rod_competence conserved="false" units="" description="">0.0</Rod_competence>
+                <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
+                <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
+                <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
+                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
             </custom_data>
         </cell_definition>
         <cell_definition name="RPC" ID="7">
             <phenotype>
                 <cycle code="5" name="live">
                     <phase_transition_rates units="1/min">
-                        <rate start_index="0" end_index="0" fixed_duration="false">0.00092</rate>
+                        <rate start_index="0" end_index="0" fixed_duration="false">0.00162</rate>
                     </phase_transition_rates>
                 </cycle>
                 <death>
@@ -2307,14 +2272,12 @@
                         <set_relative_equilibrium_distance enabled="false" units="dimensionless">1.8</set_relative_equilibrium_distance>
                         <set_absolute_equilibrium_distance enabled="false" units="micron">15.12</set_absolute_equilibrium_distance>
                     </options>
-                    <cell_BM_adhesion_strength units="micron/min">4.0</cell_BM_adhesion_strength>
-                    <cell_BM_repulsion_strength units="micron/min">10.0</cell_BM_repulsion_strength>
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
                 </mechanics>
                 <motility>
-                    <speed units="micron/min">1.0</speed>
+                    <speed units="micron/min">0</speed>
                     <persistence_time units="min">1.0</persistence_time>
                     <migration_bias units="dimensionless">0.0</migration_bias>
                     <options>
@@ -2496,22 +2459,19 @@
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <Ikzf1_TIF conserved="false" units="" description="">0.0</Ikzf1_TIF>
-                <Pou2f_TIF conserved="false" units="" description="">0.0</Pou2f_TIF>
-                <Onecut_TIF conserved="false" units="" description="">0.0</Onecut_TIF>
-                <FoxN4_TIF conserved="false" units="" description="">0.0</FoxN4_TIF>
-                <miRNA_TIF conserved="false" units="" description="">0.0</miRNA_TIF>
-                <Nfi_TIF conserved="false" units="" description="">0.0</Nfi_TIF>
-                <Casz1_TIF conserved="false" units="" description="">0.0</Casz1_TIF>
                 <cell_age conserved="false" units="" description="">0.0</cell_age>
-                <migration_state_length conserved="false" units="" description="">200</migration_state_length>
-                <RGC_competency conserved="false" units="" description="">0.0</RGC_competency>
-                <AC_competency conserved="false" units="" description="">0.0</AC_competency>
-                <BC_competency conserved="false" units="" description="">0.0</BC_competency>
-                <HC_competency conserved="false" units="" description="">0.0</HC_competency>
-                <MG_competency conserved="false" units="" description="">0.0</MG_competency>
-                <Cone_competency conserved="false" units="" description="">0.0</Cone_competency>
-                <Rod_competency conserved="false" units="" description="">0.0</Rod_competency>
+                <migration_state_length conserved="false" units="" description="">1000</migration_state_length>
+                <RGC_competence conserved="false" units="" description="">0.0</RGC_competence>
+                <AC_competence conserved="false" units="" description="">0.0</AC_competence>
+                <BC_competence conserved="false" units="" description="">0.0</BC_competence>
+                <HC_competence conserved="false" units="" description="">0.0</HC_competence>
+                <MG_competence conserved="false" units="" description="">0.0</MG_competence>
+                <Cone_competence conserved="false" units="" description="">0.0</Cone_competence>
+                <Rod_competence conserved="false" units="" description="">0.0</Rod_competence>
+                <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
+                <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
+                <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
+                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
             </custom_data>
         </cell_definition>
         <cell_definition name="Rod" ID="8">
@@ -2583,18 +2543,16 @@
                         <set_relative_equilibrium_distance enabled="false" units="dimensionless">1.8</set_relative_equilibrium_distance>
                         <set_absolute_equilibrium_distance enabled="false" units="micron">15.12</set_absolute_equilibrium_distance>
                     </options>
-                    <cell_BM_adhesion_strength units="micron/min">4.0</cell_BM_adhesion_strength>
-                    <cell_BM_repulsion_strength units="micron/min">10.0</cell_BM_repulsion_strength>
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
                 </mechanics>
                 <motility>
-                    <speed units="micron/min">0.21</speed>
+                    <speed units="micron/min">0</speed>
                     <persistence_time units="min">0.05</persistence_time>
                     <migration_bias units="dimensionless">0.8</migration_bias>
                     <options>
-                        <enabled>false</enabled>
+                        <enabled>true</enabled>
                         <use_2D>true</use_2D>
                         <chemotaxis>
                             <enabled>false</enabled>
@@ -2626,9 +2584,9 @@
                 </motility>
                 <secretion>
                     <substrate name="Rod Quorum">
-                        <secretion_rate units="1/min">1</secretion_rate>
+                        <secretion_rate units="1/min">0.0</secretion_rate>
                         <secretion_target units="substrate density">1</secretion_target>
-                        <uptake_rate units="1/min">1</uptake_rate>
+                        <uptake_rate units="1/min">0.0</uptake_rate>
                         <net_export_rate units="total substrate/min">0.0</net_export_rate>
                     </substrate>
                     <substrate name="Cone Quorum">
@@ -2772,22 +2730,19 @@
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <Ikzf1_TIF conserved="false" units="" description="">0.0</Ikzf1_TIF>
-                <Pou2f_TIF conserved="false" units="" description="">0.0</Pou2f_TIF>
-                <Onecut_TIF conserved="false" units="" description="">0.0</Onecut_TIF>
-                <FoxN4_TIF conserved="false" units="" description="">0.0</FoxN4_TIF>
-                <miRNA_TIF conserved="false" units="" description="">0.0</miRNA_TIF>
-                <Nfi_TIF conserved="false" units="" description="">0.0</Nfi_TIF>
-                <Casz1_TIF conserved="false" units="" description="">0.0</Casz1_TIF>
                 <cell_age conserved="false" units="" description="">0.0</cell_age>
-                <migration_state_length conserved="true" units="" description="">200.0</migration_state_length>
-                <RGC_competency conserved="false" units="" description="">0.0</RGC_competency>
-                <AC_competency conserved="false" units="" description="">0.0</AC_competency>
-                <BC_competency conserved="false" units="" description="">0.0</BC_competency>
-                <HC_competency conserved="false" units="" description="">0.0</HC_competency>
-                <MG_competency conserved="false" units="" description="">0.0</MG_competency>
-                <Cone_competency conserved="false" units="" description="">0.0</Cone_competency>
-                <Rod_competency conserved="false" units="" description="">0.0</Rod_competency>
+                <migration_state_length conserved="false" units="" description="">1000</migration_state_length>
+                <RGC_competence conserved="false" units="" description="">0.0</RGC_competence>
+                <AC_competence conserved="false" units="" description="">0.0</AC_competence>
+                <BC_competence conserved="false" units="" description="">0.0</BC_competence>
+                <HC_competence conserved="false" units="" description="">0.0</HC_competence>
+                <MG_competence conserved="false" units="" description="">0.0</MG_competence>
+                <Cone_competence conserved="false" units="" description="">0.0</Cone_competence>
+                <Rod_competence conserved="false" units="" description="">0.0</Rod_competence>
+                <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
+                <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
+                <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
+                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
             </custom_data>
         </cell_definition>
         <cell_definition name="Basal Membrane" ID="9">
@@ -2859,8 +2814,6 @@
                         <set_relative_equilibrium_distance enabled="false" units="dimensionless">1.8</set_relative_equilibrium_distance>
                         <set_absolute_equilibrium_distance enabled="false" units="micron">15.12</set_absolute_equilibrium_distance>
                     </options>
-                    <cell_BM_adhesion_strength units="micron/min">4.0</cell_BM_adhesion_strength>
-                    <cell_BM_repulsion_strength units="micron/min">10.0</cell_BM_repulsion_strength>
                     <attachment_elastic_constant units="1/min">0.01</attachment_elastic_constant>
                     <attachment_rate units="1/min">0.0</attachment_rate>
                     <detachment_rate units="1/min">0.0</detachment_rate>
@@ -3048,29 +3001,26 @@
                 </cell_transformations>
             </phenotype>
             <custom_data>
-                <Ikzf1_TIF conserved="false" units="" description="">0.0</Ikzf1_TIF>
-                <Pou2f_TIF conserved="false" units="" description="">0.0</Pou2f_TIF>
-                <Onecut_TIF conserved="false" units="" description="">0.0</Onecut_TIF>
-                <FoxN4_TIF conserved="false" units="" description="">0.0</FoxN4_TIF>
-                <miRNA_TIF conserved="false" units="" description="">0.0</miRNA_TIF>
-                <Nfi_TIF conserved="false" units="" description="">0.0</Nfi_TIF>
-                <Casz1_TIF conserved="false" units="" description="">0.0</Casz1_TIF>
                 <cell_age conserved="false" units="" description="">0.0</cell_age>
                 <migration_state_length conserved="false" units="" description="">0.0</migration_state_length>
-                <RGC_competency conserved="false" units="" description="">0.0</RGC_competency>
-                <AC_competency conserved="false" units="" description="">0.0</AC_competency>
-                <BC_competency conserved="false" units="" description="">0.0</BC_competency>
-                <HC_competency conserved="false" units="" description="">0.0</HC_competency>
-                <MG_competency conserved="false" units="" description="">0.0</MG_competency>
-                <Cone_competency conserved="false" units="" description="">0.0</Cone_competency>
-                <Rod_competency conserved="false" units="" description="">0.0</Rod_competency>
+                <RGC_competence conserved="false" units="" description="">0.0</RGC_competence>
+                <AC_competence conserved="false" units="" description="">0.0</AC_competence>
+                <BC_competence conserved="false" units="" description="">0.0</BC_competence>
+                <HC_competence conserved="false" units="" description="">0.0</HC_competence>
+                <MG_competence conserved="false" units="" description="">0.0</MG_competence>
+                <Cone_competence conserved="false" units="" description="">0.0</Cone_competence>
+                <Rod_competence conserved="false" units="" description="">0.0</Rod_competence>
+                <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
+                <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
+                <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
+                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
             </custom_data>
         </cell_definition>
     </cell_definitions>
 
     <initial_conditions>
         <cell_positions type="csv" enabled="true">
-            <folder>/Users/morgana/Documents/GitHub/retina_project/PhysiCell/user_projects/retina/config</folder>
+            <folder>/Users/morgana/Documents/GitHub/retina_project/retina/config</folder>
             <filename>RPC_plant.csv</filename>
         </cell_positions>
     </initial_conditions>
@@ -3078,8 +3028,8 @@
     <cell_rules>
         <rulesets>
             <ruleset protocol="CBHG" version="2.0" format="csv" enabled="true">
-                <folder>/Users/morgana/Documents/GitHub/retina_project/PhysiCell/user_projects/retina/config</folder>
-                <filename>retina_rules_sec2_test.csv</filename>
+                <folder>/Users/morgana/Documents/GitHub/retina_project/retina/config</folder>
+                <filename>retina_rules_prolif.csv</filename>
             </ruleset>
         </rulesets>
         <settings />
@@ -3088,7 +3038,90 @@
     <user_parameters>
         <random_seed type="int" units="dimensionless" description="">0</random_seed>
         <number_of_cells type="int" units="none" description="initial number of cells (for each cell type)">0</number_of_cells>
-        <num_nonRPC_subtypes type="int" units="dimensionless" description="number of non-RPC cell fate trajectories">7</num_nonRPC_subtypes>
-        <t_maturation type="double" units="minutes" description="PhysiCell simulation time to mark retina maturation">7200</t_maturation>
+        <num_nonRPC_subtypes type="int" units="dimensionless" description="number of non-RPC cell fate trajectories">8</num_nonRPC_subtypes>
+        <mature_temporal_marker type="double" units="minutes" description="PhysiCell simulation time to mark retina maturation">7200</mature_temporal_marker>
+        <Ikzf1_Intermediate_competence type="double" units="" description="">0.6</Ikzf1_Intermediate_competence>
+        <Ikzf1_RGC_competence type="double" units="" description="">0.3</Ikzf1_RGC_competence>
+        <Ikzf1_MG_competence type="double" units="" description="">0.0</Ikzf1_MG_competence>
+        <Ikzf1_AC_competence type="double" units="" description="">0.0</Ikzf1_AC_competence>
+        <Ikzf1_BC_competence type="double" units="" description="">0.0</Ikzf1_BC_competence>
+        <Ikzf1_HC_competence type="double" units="" description="">0.0</Ikzf1_HC_competence>
+        <Ikzf1_Rod_competence type="double" units="" description="">0.0</Ikzf1_Rod_competence>
+        <Ikzf1_Cone_competence type="double" units="" description="">0.0</Ikzf1_Cone_competence>
+        <Ikzf1_temporal_marker type="double" units="" description="time at which Ikzf1 TIF is solely represented in RPC competence">1000</Ikzf1_temporal_marker>
+        <Pou2f_Intermediate_competence type="double" units="" description="">0.7</Pou2f_Intermediate_competence>
+        <Pou2f_RGC_competence type="double" units="" description="">0.0</Pou2f_RGC_competence>
+        <Pou2f_MG_competence type="double" units="" description="">0.0</Pou2f_MG_competence>
+        <Pou2f_AC_competence type="double" units="" description="">0.0</Pou2f_AC_competence>
+        <Pou2f_BC_competence type="double" units="" description="">0.0</Pou2f_BC_competence>
+        <Pou2f_HC_competence type="double" units="" description="">0.2</Pou2f_HC_competence>
+        <Pou2f_Rod_competence type="double" units="" description="">0.0</Pou2f_Rod_competence>
+        <Pou2f_Cone_competence type="double" units="" description="">0.1</Pou2f_Cone_competence>
+        <Pou2f_temporal_marker type="double" units="" description="time at which Pou2f TIF is solely represented in RPC competence">1500</Pou2f_temporal_marker>
+        <Onecut_Intermediate_competence type="double" units="" description="">0.5</Onecut_Intermediate_competence>
+        <Onecut_RGC_competence type="double" units="" description="">0.3</Onecut_RGC_competence>
+        <Onecut_MG_competence type="double" units="" description="">0.0</Onecut_MG_competence>
+        <Onecut_AC_competence type="double" units="" description="">0.3</Onecut_AC_competence>
+        <Onecut_BC_competence type="double" units="" description="">0.0</Onecut_BC_competence>
+        <Onecut_HC_competence type="double" units="" description="">0.2</Onecut_HC_competence>
+        <Onecut_Rod_competence type="double" units="" description="">0.0</Onecut_Rod_competence>
+        <Onecut_Cone_competence type="double" units="" description="">0.2</Onecut_Cone_competence>
+        <Onecut_temporal_marker type="double" units="" description="time at which Onecut TIF is solely represented in RPC competence">1800</Onecut_temporal_marker>
+        <FoxN4_Intermediate_competence type="double" units="" description="">0.0</FoxN4_Intermediate_competence>
+        <FoxN4_RGC_competence type="double" units="" description="">0.0</FoxN4_RGC_competence>
+        <FoxN4_MG_competence type="double" units="" description="">0.2</FoxN4_MG_competence>
+        <FoxN4_AC_competence type="double" units="" description="">0.1</FoxN4_AC_competence>
+        <FoxN4_BC_competence type="double" units="" description="">0.0</FoxN4_BC_competence>
+        <FoxN4_HC_competence type="double" units="" description="">0.1</FoxN4_HC_competence>
+        <FoxN4_Rod_competence type="double" units="" description="">0.4</FoxN4_Rod_competence>
+        <FoxN4_Cone_competence type="double" units="" description="">0.4</FoxN4_Cone_competence>
+        <FoxN4_temporal_marker type="double" units="" description="time at which FoxN4 TIF is solely represented in RPC competence">2200</FoxN4_temporal_marker>
+        <miRNA_Intermediate_competence type="double" units="" description="">0.0</miRNA_Intermediate_competence>
+        <miRNA_RGC_competence type="double" units="" description="">0.0</miRNA_RGC_competence>
+        <miRNA_MG_competence type="double" units="" description="">0.2</miRNA_MG_competence>
+        <miRNA_AC_competence type="double" units="" description="">0.0</miRNA_AC_competence>
+        <miRNA_BC_competence type="double" units="" description="">0.2</miRNA_BC_competence>
+        <miRNA_HC_competence type="double" units="" description="">0.0</miRNA_HC_competence>
+        <miRNA_Rod_competence type="double" units="" description="">0.3</miRNA_Rod_competence>
+        <miRNA_Cone_competence type="double" units="" description="">0.3</miRNA_Cone_competence>
+        <miRNA_temporal_marker type="double" units="" description="time at which FoxN4 TIF is solely represented in RPC competence">3000</miRNA_temporal_marker>
+        <Nfi_Intermediate_competence type="double" units="" description="">0.0</Nfi_Intermediate_competence>
+        <Nfi_RGC_competence type="double" units="" description="">0.0</Nfi_RGC_competence>
+        <Nfi_MG_competence type="double" units="" description="">0.05</Nfi_MG_competence>
+        <Nfi_AC_competence type="double" units="" description="">0.0</Nfi_AC_competence>
+        <Nfi_BC_competence type="double" units="" description="">0.0</Nfi_BC_competence>
+        <Nfi_HC_competence type="double" units="" description="">0.0</Nfi_HC_competence>
+        <Nfi_Rod_competence type="double" units="" description="">0.8</Nfi_Rod_competence>
+        <Nfi_Cone_competence type="double" units="" description="">0.05</Nfi_Cone_competence>
+        <Nfi_temporal_marker type="double" units="" description="time at which Nfi TIF is solely represented in RPC competence">3500</Nfi_temporal_marker>
+        <Casz1_Intermediate_competence type="double" units="" description="">0.0</Casz1_Intermediate_competence>
+        <Casz1_RGC_competence type="double" units="" description="">0.1</Casz1_RGC_competence>
+        <Casz1_MG_competence type="double" units="" description="">0.0</Casz1_MG_competence>
+        <Casz1_AC_competence type="double" units="" description="">0.0</Casz1_AC_competence>
+        <Casz1_BC_competence type="double" units="" description="">0.3</Casz1_BC_competence>
+        <Casz1_HC_competence type="double" units="" description="">0.0</Casz1_HC_competence>
+        <Casz1_Rod_competence type="double" units="" description="">0.6</Casz1_Rod_competence>
+        <Casz1_Cone_competence type="double" units="" description="">0.0</Casz1_Cone_competence>
+        <Casz1_temporal_marker type="double" units="" description="time at which Casz1 TIF is solely represented in RPC competence">6000</Casz1_temporal_marker>
+        <mature_Intermediate_competence type="double" units="" description="">0.0</mature_Intermediate_competence>
+        <mature_RGC_competence type="double" units="" description="">0.05</mature_RGC_competence>
+        <mature_MG_competence type="double" units="" description="">0.4</mature_MG_competence>
+        <mature_AC_competence type="double" units="" description="">0.05</mature_AC_competence>
+        <mature_BC_competence type="double" units="" description="">0.05</mature_BC_competence>
+        <mature_HC_competence type="double" units="" description="">0.05</mature_HC_competence>
+        <mature_Rod_competence type="double" units="" description="">0.6</mature_Rod_competence>
+        <mature_Cone_competence type="double" units="" description="">0.2</mature_Cone_competence>
+        <initial_Intermediate_competence type="double" units="" description="">0.9</initial_Intermediate_competence>
+        <initial_RGC_competence type="double" units="" description="">0.1</initial_RGC_competence>
+        <initial_MG_competence type="double" units="" description="">0.0</initial_MG_competence>
+        <initial_AC_competence type="double" units="" description="">0.0</initial_AC_competence>
+        <initial_BC_competence type="double" units="" description="">0.0</initial_BC_competence>
+        <initial_HC_competence type="double" units="" description="">0.0</initial_HC_competence>
+        <initial_Rod_competence type="double" units="" description="">0.0</initial_Rod_competence>
+        <initial_Cone_competence type="double" units="" description="">0.0</initial_Cone_competence>
+        <competence_retention_factor type="double" units="" description="tendency for RPCs to adhere to intrinsic temporal competence (in Newton's equation)">1.0</competence_retention_factor>
+        <d_basal_mature type="double" units="" description="">300</d_basal_mature>
+        <d_apical_mature type="double" units="" description="">700</d_apical_mature>
+        <d_PR_layer_mature type="double" units="" description="">400</d_PR_layer_mature>
     </user_parameters>
 </PhysiCell_settings>
