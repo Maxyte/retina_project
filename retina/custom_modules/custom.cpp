@@ -205,8 +205,13 @@ void phenotype_function( Cell* pCell, Phenotype& phenotype, double dt )
 std::vector<double> L1_normalize( std::vector<double> v )
 {
     double norm = 0;
-    for ( int i = 0; i < v.size(); i++ )
+    for ( int i = 0; i < v.size(); i++ ) {
+        // set negative entries to 0
+        if (v[i] < 0) {
+            v[i] = 0;
+        }
         norm += v[i];
+    }
     if ( norm > 0.0001 )
     {
         for ( int i = 0; i < v.size(); i++ )
@@ -232,15 +237,15 @@ void competence_function( Cell* pCell, Phenotype& phenotype, double dt )
 
     // TIF apices (time at which TIF is maximally expressed)
     double t = get_single_signal( pCell, "time" );
-    double t0 = 0;
-    double t1 = parameters.doubles["Ikzf1_temporal_marker"].value;
-    double t2 = parameters.doubles["Pou2f_temporal_marker"].value;
-    double t3 = parameters.doubles["Onecut_temporal_marker"].value;
-    double t4 = parameters.doubles["FoxN4_temporal_marker"].value;
-    double t5 = parameters.doubles["miRNA_temporal_marker"].value;
-    double t6 = parameters.doubles["Nfi_temporal_marker"].value;
-    double t7 = parameters.doubles["Casz1_temporal_marker"].value;
-    double t8 = parameters.doubles["mature_temporal_marker"].value;
+//    double t0 = 0;
+//    double t1 = parameters.doubles["Ikzf1_temporal_marker"].value;
+//    double t2 = parameters.doubles["Pou2f_temporal_marker"].value;
+//    double t3 = parameters.doubles["Onecut_temporal_marker"].value;
+//    double t4 = parameters.doubles["FoxN4_temporal_marker"].value;
+//    double t5 = parameters.doubles["miRNA_temporal_marker"].value;
+//    double t6 = parameters.doubles["Nfi_temporal_marker"].value;
+//    double t7 = parameters.doubles["Casz1_temporal_marker"].value;
+//    double t8 = parameters.doubles["mature_temporal_marker"].value;
     
     // helper L1 norm function for pdf
 
@@ -249,7 +254,7 @@ void competence_function( Cell* pCell, Phenotype& phenotype, double dt )
         std::vector<double> competence_expectation;
         
         // t=0 to Ikzf1 apex
-        if ( t <= t1 ) {
+        if ( t <= parameters.doubles["Ikzf1_temporal_marker"].value ) {
             std::vector<double> initial_competence_vec = {
                 parameters.doubles["initial_Intermediate_competence"].value,
                 parameters.doubles["initial_RGC_competence"].value,
@@ -263,7 +268,7 @@ void competence_function( Cell* pCell, Phenotype& phenotype, double dt )
             competence_expectation = initial_competence_vec;
         }
         // Ikzf1 to Pou2f
-        if (t > t1 && t <= t2 ) {
+        else if (t > parameters.doubles["Ikzf1_temporal_marker"].value && t <= parameters.doubles["Pou2f_temporal_marker"].value ) {
             std::vector<double> Ikzf1_competence_vec = {
                 parameters.doubles["Ikzf1_Intermediate_competence"].value,
                 parameters.doubles["Ikzf1_RGC_competence"].value,
@@ -277,7 +282,7 @@ void competence_function( Cell* pCell, Phenotype& phenotype, double dt )
             competence_expectation = Ikzf1_competence_vec;
         }
         // Pou2f to Onecut
-        if (t > t2 && t <= t3 ) {
+        else if (t > parameters.doubles["Pou2f_temporal_marker"].value && t <= parameters.doubles["Onecut_temporal_marker"].value ) {
             
             std::vector<double> Pou2f_competence_vec = {
                 parameters.doubles["Pou2f_Intermediate_competence"].value,
@@ -293,7 +298,7 @@ void competence_function( Cell* pCell, Phenotype& phenotype, double dt )
             competence_expectation = Pou2f_competence_vec;
         }
         // Onecut to FoxN4
-        if (t > t3 && t <= t4 ) {
+        else if (t > parameters.doubles["Onecut_temporal_marker"].value && t <= parameters.doubles["FoxN4_temporal_marker"].value ) {
             std::vector<double> Onecut_competence_vec = {
                 parameters.doubles["Onecut_Intermediate_competence"].value,
                 parameters.doubles["Onecut_RGC_competence"].value,
@@ -307,7 +312,7 @@ void competence_function( Cell* pCell, Phenotype& phenotype, double dt )
             competence_expectation = Onecut_competence_vec;
         }
         // FoxN4 to miRNA
-        if (t > t4 && t <= t5 ) {
+        else if (t > parameters.doubles["FoxN4_temporal_marker"].value && t <= parameters.doubles["miRNA_temporal_marker"].value ) {
             std::vector<double> FoxN4_competence_vec = {
                 parameters.doubles["FoxN4_Intermediate_competence"].value,
                 parameters.doubles["FoxN4_RGC_competence"].value,
@@ -321,7 +326,7 @@ void competence_function( Cell* pCell, Phenotype& phenotype, double dt )
             competence_expectation = FoxN4_competence_vec;
         }
         // miRNA to Nfi
-        if (t > t5 && t <= t6 ) {
+        else if (t > parameters.doubles["miRNA_temporal_marker"].value && t <= parameters.doubles["Nfi_temporal_marker"].value ) {
             std::vector<double> miRNA_competence_vec = {parameters.doubles["miRNA_Intermediate_competence"].value,
                 parameters.doubles["miRNA_RGC_competence"].value,
                 parameters.doubles["miRNA_MG_competence"].value,
@@ -333,7 +338,7 @@ void competence_function( Cell* pCell, Phenotype& phenotype, double dt )
             competence_expectation = miRNA_competence_vec;
         }
         // Nfi to Casz1
-        if (t > t6 && t <= t7 ) {
+        else if (t > parameters.doubles["Nfi_temporal_marker"].value && t <= parameters.doubles["Casz1_temporal_marker"].value ) {
             std::vector<double> Nfi_competence_vec ={
                 parameters.doubles["Nfi_Intermediate_competence"].value,
                 parameters.doubles["Nfi_RGC_competence"].value,
@@ -347,7 +352,7 @@ void competence_function( Cell* pCell, Phenotype& phenotype, double dt )
             competence_expectation = Nfi_competence_vec;
         }
         // Casz1 to Maturity
-        if ( t > t7 && t <= t8 ) {
+        else if ( t > parameters.doubles["Casz1_temporal_marker"].value && t <= parameters.doubles["mature_temporal_marker"].value ) {
             std::vector<double> Casz1_competence_vec = {
                 parameters.doubles["Casz1_Intermediate_competence"].value,
                 parameters.doubles["Casz1_RGC_competence"].value,
@@ -362,7 +367,7 @@ void competence_function( Cell* pCell, Phenotype& phenotype, double dt )
             competence_expectation = Casz1_competence_vec;
         }
         // Maturity
-        if ( t > t8) 
+        else if ( t > parameters.doubles["mature_temporal_marker"].value)
         {
             std::vector<double> mature_competence_vec = {
                 parameters.doubles["mature_Intermediate_competence"].value,
@@ -376,7 +381,7 @@ void competence_function( Cell* pCell, Phenotype& phenotype, double dt )
             };
             competence_expectation = mature_competence_vec;
         }
-        // normalize competence expectation
+        // L1-normalize competence expectation
         competence_expectation = L1_normalize( competence_expectation );
         
         // ==== NOTCH SIGNAL STRENGTH AND DIRECTION ====
@@ -413,7 +418,7 @@ void competence_function( Cell* pCell, Phenotype& phenotype, double dt )
     for ( int i = 0; i < competence.size(); i++ )
     {
         // equal weight at t=0 evolves linearly to TIF dominance at t_mat
-        double w_TIF = (t8 + t) / (2 * t8);
+        double w_TIF = (parameters.doubles["mature_temporal_marker"].value + t) / (2 * parameters.doubles["mature_temporal_marker"].value);
         if (w_TIF > 1)
             w_TIF = 1;
         double D_TIF = w_TIF * parameters.doubles("competence_retention_factor") * (competence_expectation[i] - competence[i]);
@@ -457,7 +462,7 @@ void competence_function( Cell* pCell, Phenotype& phenotype, double dt )
         set_single_behavior( pCell, "velocity_x", 0);
         set_single_behavior( pCell, "velocity_y", 0);
         set_single_behavior( pCell, "velocity_z", 0);
-        if ( UniformRandom() < (t-t1)/(t8-t1) ) // Neurogenic division decision goes here!
+        if ( UniformRandom() < (t-parameters.doubles["Ikzf1_temporal_marker"].value)/(parameters.doubles["mature_temporal_marker"].value-parameters.doubles["Ikzf1_temporal_marker"].value) ) // Neurogenic division decision goes here!
         {
             if ( UniformRandom() < 0.03 )
                 set_single_behavior( pCell, "custom:flagged_to_differentiate", 1 );

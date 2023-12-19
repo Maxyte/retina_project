@@ -1,4 +1,7 @@
 # *************** LOAD LIBRARIES AND DATA *************************************************
+# Script to convert MERSCOPE spatially-resolved cell type data
+# (Choi et al.;;https://www.biorxiv.org/content/10.1101/2022.12.04.518972v1; https://zenodo.org/records/8144355)
+# into PhysiCell-interpretable initial conditions.
 import scanpy as sc
 import math
 import pandas as pd
