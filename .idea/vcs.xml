@@ -2,5 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PhysiCell" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PhysiCell-Studio" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PhysiCell-ret" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/biodynamo" vcs="Git" />
   </component>
 </project>

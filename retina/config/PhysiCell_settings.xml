@@ -574,7 +574,16 @@
                 <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
                 <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
                 <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
-                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
+                <AC_fate conserved="false" units="" description="">0.0</AC_fate>
+                <BC_fate conserved="false" units="" description="">0.0</BC_fate>
+                <HC_fate conserved="false" units="" description="">0.0</HC_fate>
+                <MG_fate conserved="false" units="" description="">0.0</MG_fate>
+                <Cone_fate conserved="false" units="" description="">0.0</Cone_fate>
+                <Rod_fate conserved="false" units="" description="">0.0</Rod_fate>
+                <Intermediate_fate conserved="false" units="" description="">0.0</Intermediate_fate>
+                <RGC_fate conserved="false" units="" description="">0.0</RGC_fate>
+                <TIF_code conserved="false" units="" description="">0.0</TIF_code>
+                <num_divisions_in_phase conserved="false" units="" description="">0.0</num_divisions_in_phase>
             </custom_data>
         </cell_definition>
         <cell_definition name="Cone" ID="1">
@@ -845,7 +854,16 @@
                 <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
                 <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
                 <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
-                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
+                <AC_fate conserved="false" units="" description="">0.0</AC_fate>
+                <BC_fate conserved="false" units="" description="">0.0</BC_fate>
+                <HC_fate conserved="false" units="" description="">0.0</HC_fate>
+                <MG_fate conserved="false" units="" description="">0.0</MG_fate>
+                <Cone_fate conserved="false" units="" description="">0.0</Cone_fate>
+                <Rod_fate conserved="false" units="" description="">0.0</Rod_fate>
+                <Intermediate_fate conserved="false" units="" description="">0.0</Intermediate_fate>
+                <RGC_fate conserved="false" units="" description="">0.0</RGC_fate>
+                <TIF_code conserved="false" units="" description="">0.0</TIF_code>
+                <num_divisions_in_phase conserved="false" units="" description="">0.0</num_divisions_in_phase>
             </custom_data>
         </cell_definition>
         <cell_definition name="RGC" ID="2">
@@ -1116,7 +1134,16 @@
                 <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
                 <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
                 <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
-                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
+                <AC_fate conserved="false" units="" description="">0.0</AC_fate>
+                <BC_fate conserved="false" units="" description="">0.0</BC_fate>
+                <HC_fate conserved="false" units="" description="">0.0</HC_fate>
+                <MG_fate conserved="false" units="" description="">0.0</MG_fate>
+                <Cone_fate conserved="false" units="" description="">0.0</Cone_fate>
+                <Rod_fate conserved="false" units="" description="">0.0</Rod_fate>
+                <Intermediate_fate conserved="false" units="" description="">0.0</Intermediate_fate>
+                <RGC_fate conserved="false" units="" description="">0.0</RGC_fate>
+                <TIF_code conserved="false" units="" description="">0.0</TIF_code>
+                <num_divisions_in_phase conserved="false" units="" description="">0.0</num_divisions_in_phase>
             </custom_data>
         </cell_definition>
         <cell_definition name="AC" ID="3">
@@ -1387,7 +1414,16 @@
                 <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
                 <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
                 <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
-                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
+                <AC_fate conserved="false" units="" description="">0.0</AC_fate>
+                <BC_fate conserved="false" units="" description="">0.0</BC_fate>
+                <HC_fate conserved="false" units="" description="">0.0</HC_fate>
+                <MG_fate conserved="false" units="" description="">0.0</MG_fate>
+                <Cone_fate conserved="false" units="" description="">0.0</Cone_fate>
+                <Rod_fate conserved="false" units="" description="">0.0</Rod_fate>
+                <Intermediate_fate conserved="false" units="" description="">0.0</Intermediate_fate>
+                <RGC_fate conserved="false" units="" description="">0.0</RGC_fate>
+                <TIF_code conserved="false" units="" description="">0.0</TIF_code>
+                <num_divisions_in_phase conserved="false" units="" description="">0.0</num_divisions_in_phase>
             </custom_data>
         </cell_definition>
         <cell_definition name="BC" ID="4">
@@ -1658,7 +1694,16 @@
                 <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
                 <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
                 <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
-                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
+                <AC_fate conserved="false" units="" description="">0.0</AC_fate>
+                <BC_fate conserved="false" units="" description="">0.0</BC_fate>
+                <HC_fate conserved="false" units="" description="">0.0</HC_fate>
+                <MG_fate conserved="false" units="" description="">0.0</MG_fate>
+                <Cone_fate conserved="false" units="" description="">0.0</Cone_fate>
+                <Rod_fate conserved="false" units="" description="">0.0</Rod_fate>
+                <Intermediate_fate conserved="false" units="" description="">0.0</Intermediate_fate>
+                <RGC_fate conserved="false" units="" description="">0.0</RGC_fate>
+                <TIF_code conserved="false" units="" description="">0.0</TIF_code>
+                <num_divisions_in_phase conserved="false" units="" description="">0.0</num_divisions_in_phase>
             </custom_data>
         </cell_definition>
         <cell_definition name="HC" ID="5">
@@ -1929,7 +1974,16 @@
                 <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
                 <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
                 <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
-                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
+                <AC_fate conserved="false" units="" description="">0.0</AC_fate>
+                <BC_fate conserved="false" units="" description="">0.0</BC_fate>
+                <HC_fate conserved="false" units="" description="">0.0</HC_fate>
+                <MG_fate conserved="false" units="" description="">0.0</MG_fate>
+                <Cone_fate conserved="false" units="" description="">0.0</Cone_fate>
+                <Rod_fate conserved="false" units="" description="">0.0</Rod_fate>
+                <Intermediate_fate conserved="false" units="" description="">0.0</Intermediate_fate>
+                <RGC_fate conserved="false" units="" description="">0.0</RGC_fate>
+                <TIF_code conserved="false" units="" description="">0.0</TIF_code>
+                <num_divisions_in_phase conserved="false" units="" description="">0.0</num_divisions_in_phase>
             </custom_data>
         </cell_definition>
         <cell_definition name="MG" ID="6">
@@ -2200,14 +2254,24 @@
                 <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
                 <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
                 <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
-                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
+                <AC_fate conserved="false" units="" description="">0.0</AC_fate>
+                <BC_fate conserved="false" units="" description="">0.0</BC_fate>
+                <HC_fate conserved="false" units="" description="">0.0</HC_fate>
+                <MG_fate conserved="false" units="" description="">0.0</MG_fate>
+                <Cone_fate conserved="false" units="" description="">0.0</Cone_fate>
+                <Rod_fate conserved="false" units="" description="">0.0</Rod_fate>
+                <Intermediate_fate conserved="false" units="" description="">0.0</Intermediate_fate>
+                <RGC_fate conserved="false" units="" description="">0.0</RGC_fate>
+                <TIF_code conserved="false" units="" description="">0.0</TIF_code>
+                <num_divisions_in_phase conserved="false" units="" description="">0.0</num_divisions_in_phase>
             </custom_data>
         </cell_definition>
         <cell_definition name="RPC" ID="7">
             <phenotype>
-                <cycle code="5" name="live">
+                <cycle code="7" name="cycling quiescent">
                     <phase_transition_rates units="1/min">
-                        <rate start_index="0" end_index="0" fixed_duration="false">0.00162</rate>
+                        <rate start_index="0" end_index="1" fixed_duration="false">3.63108e-3</rate>
+                        <rate start_index="1" end_index="0" fixed_duration="true">3.63108e-3</rate>
                     </phase_transition_rates>
                 </cycle>
                 <death>
@@ -2471,7 +2535,16 @@
                 <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
                 <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
                 <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
-                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
+                <AC_fate conserved="false" units="" description="">0.0</AC_fate>
+                <BC_fate conserved="false" units="" description="">0.0</BC_fate>
+                <HC_fate conserved="false" units="" description="">0.0</HC_fate>
+                <MG_fate conserved="false" units="" description="">0.0</MG_fate>
+                <Cone_fate conserved="false" units="" description="">0.0</Cone_fate>
+                <Rod_fate conserved="false" units="" description="">0.0</Rod_fate>
+                <Intermediate_fate conserved="false" units="" description="">0.0</Intermediate_fate>
+                <RGC_fate conserved="false" units="" description="">0.0</RGC_fate>
+                <TIF_code conserved="false" units="" description="">0.0</TIF_code>
+                <num_divisions_in_phase conserved="false" units="" description="">0.0</num_divisions_in_phase>
             </custom_data>
         </cell_definition>
         <cell_definition name="Rod" ID="8">
@@ -2742,7 +2815,16 @@
                 <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
                 <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
                 <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
-                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
+                <AC_fate conserved="false" units="" description="">0.0</AC_fate>
+                <BC_fate conserved="false" units="" description="">0.0</BC_fate>
+                <HC_fate conserved="false" units="" description="">0.0</HC_fate>
+                <MG_fate conserved="false" units="" description="">0.0</MG_fate>
+                <Cone_fate conserved="false" units="" description="">0.0</Cone_fate>
+                <Rod_fate conserved="false" units="" description="">0.0</Rod_fate>
+                <Intermediate_fate conserved="false" units="" description="">0.0</Intermediate_fate>
+                <RGC_fate conserved="false" units="" description="">0.0</RGC_fate>
+                <TIF_code conserved="false" units="" description="">0.0</TIF_code>
+                <num_divisions_in_phase conserved="false" units="" description="">0.0</num_divisions_in_phase>
             </custom_data>
         </cell_definition>
         <cell_definition name="Basal Membrane" ID="9">
@@ -3013,7 +3095,16 @@
                 <Intermediate_competence conserved="false" units="" description="">0.0</Intermediate_competence>
                 <flagged_to_differentiate conserved="false" units="" description="boolean flag to signal type transformation">0.0</flagged_to_differentiate>
                 <flagged_to_migrate conserved="false" units="" description="">0.0</flagged_to_migrate>
-                <time_migrating conserved="false" units="" description="">0.0</time_migrating>
+                <AC_fate conserved="false" units="" description="">0.0</AC_fate>
+                <BC_fate conserved="false" units="" description="">0.0</BC_fate>
+                <HC_fate conserved="false" units="" description="">0.0</HC_fate>
+                <MG_fate conserved="false" units="" description="">0.0</MG_fate>
+                <Cone_fate conserved="false" units="" description="">0.0</Cone_fate>
+                <Rod_fate conserved="false" units="" description="">0.0</Rod_fate>
+                <Intermediate_fate conserved="false" units="" description="">0.0</Intermediate_fate>
+                <RGC_fate conserved="false" units="" description="">0.0</RGC_fate>
+                <TIF_code conserved="false" units="" description="">0.0</TIF_code>
+                <num_divisions_in_phase conserved="false" units="" description="">0.0</num_divisions_in_phase>
             </custom_data>
         </cell_definition>
     </cell_definitions>

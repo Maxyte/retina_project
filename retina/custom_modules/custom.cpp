@@ -67,7 +67,6 @@
 
 #include "./custom.h"
 #include <bits/stdc++.h>
-// #include "../../Physicell/core/PhysiCell_cell.cpp"
 void create_cell_types( void )
 {
 	// set the random seed 
@@ -125,7 +124,7 @@ void create_cell_types( void )
 	
 	cell_defaults.functions.custom_cell_rule = custom_function; 
 	cell_defaults.functions.contact_function = contact_function;
-    
+
 	/*
 	   This builds the map of cell definitions and summarizes the setup. 
 	*/
@@ -223,7 +222,7 @@ std::vector<double> L1_normalize( std::vector<double> v )
 void competence_function( Cell* pCell, Phenotype& phenotype, double dt ) 
 {
     // ==== SETUP CONSTANTS ====
-    // get current competence and normalize
+    // get current competence/fate and normalize
     double Intermediate_C = get_single_behavior( pCell, "custom:Intermediate_competence" );
     double RGC_C = get_single_behavior( pCell, "custom:RGC_competence" );
     double MG_C = get_single_behavior( pCell, "custom:MG_competence" );
@@ -234,7 +233,18 @@ void competence_function( Cell* pCell, Phenotype& phenotype, double dt )
     double Cone_C = get_single_behavior( pCell, "custom:Cone_competence" );
     std::vector<double> competence = { Intermediate_C, RGC_C, MG_C, AC_C, BC_C, HC_C, Rod_C, Cone_C };
     competence = L1_normalize( competence );
-
+    
+    double Intermediate_F = get_single_behavior( pCell, "custom:Intermediate_fate" );
+    double RGC_F = get_single_behavior( pCell, "custom:RGC_fate" );
+    double MG_F = get_single_behavior( pCell, "custom:MG_fate" );
+    double AC_F = get_single_behavior( pCell, "custom:AC_fate" );
+    double BC_F = get_single_behavior( pCell, "custom:BC_fate" );
+    double HC_F = get_single_behavior( pCell, "custom:HC_fate" );
+    double Rod_F = get_single_behavior( pCell, "custom:Rod_fate" );
+    double Cone_F = get_single_behavior( pCell, "custom:Cone_fate" );
+    std::vector<double> fate = { Intermediate_F, RGC_F, MG_F, AC_F, BC_F, HC_F, Rod_F, Cone_F };
+    competence = L1_normalize( competence );
+    fate = L1_normalize( fate );
     // TIF apices (time at which TIF is maximally expressed)
     double t = get_single_signal( pCell, "time" );
 //    double t0 = 0;
@@ -443,97 +453,97 @@ void competence_function( Cell* pCell, Phenotype& phenotype, double dt )
     
     // TRANSFORM TO DIFFERENTIATED NEURON BASED ON COMPETENCE
     
-    // Neurogenic cell division probability as a function of time and apical proximity
-    if ( pCell->custom_data["custom:flagged_to_differentiate"] == 0.0 ) 
-    {
-        set_single_behavior( pCell, "transform to Intermediate", 0.0 );
-        set_single_behavior( pCell, "transform to RGC", 0.0 );
-        set_single_behavior( pCell, "transform to MG", 0.0 );
-        set_single_behavior( pCell, "transform to AC", 0.0 );
-        set_single_behavior( pCell, "transform to BC", 0.0 );
-        set_single_behavior( pCell, "transform to HC", 0.0 );
-        set_single_behavior( pCell, "transform to Rod", 0.0 );
-        set_single_behavior( pCell, "transform to Cone", 0.0 );
-    }
-    // prompt cell to transform
-    if ( pCell->custom_data["flagged_to_migrate"] == 0 )
-    {
-        // halt cell
-        set_single_behavior( pCell, "velocity_x", 0);
-        set_single_behavior( pCell, "velocity_y", 0);
-        set_single_behavior( pCell, "velocity_z", 0);
-        if ( UniformRandom() < (t-parameters.doubles["Ikzf1_temporal_marker"].value)/(parameters.doubles["mature_temporal_marker"].value-parameters.doubles["Ikzf1_temporal_marker"].value) ) // Neurogenic division decision goes here!
-        {
-            if ( UniformRandom() < 0.03 )
-                set_single_behavior( pCell, "custom:flagged_to_differentiate", 1 );
-            if ( pCell->custom_data["flagged_to_differentiate"] == 1)
-            {
-                // SELECTION OF CELL TYPE FOR NEUROGENIC CELL DIVISION
-                int type_index = choose_event( competence );
-                std::string transformation_type_target;
-                if ( type_index == 0 )
-                    transformation_type_target = "Intermediate";
-                if ( type_index == 1 )
-                    transformation_type_target = "RGC";
-                if ( type_index == 2 )
-                    transformation_type_target = "MG";
-                if ( type_index == 3 )
-                    transformation_type_target = "AC";
-                if ( type_index == 4 )
-                    transformation_type_target = "BC";
-                if ( type_index == 5 )
-                    transformation_type_target = "HC";
-                if ( type_index == 6 )
-                    transformation_type_target = "Rod";
-                if ( type_index == 7 )
-                    transformation_type_target = "Cone";
-                
-                set_single_behavior( pCell, "transform to " + transformation_type_target, 1);
-                set_single_behavior( pCell, "custom:flagged_to_differentiate", 0 );
-                set_single_behavior( pCell, "custom:flagged_to_migrate", 1);
-            }
-        }
-    }
-    return;
-}
-
-void retina_velocity_update_function( Cell* pCell, Phenotype& phenotype, double dt )
-{
-    // prompt cell to migrate
-    if ( pCell->custom_data["flagged_to_migrate"] == 1 )
-    {
-        if ( pCell->custom_data["time_migrating"] > pCell->custom_data["migration_state_length"] )
-        {
-            set_single_behavior( pCell, "custom:flagged_to_migrate", 0);
-            set_single_behavior( pCell, "custom:time_migrating", 0);
-            phenotype.mechanics.cell_cell_repulsion_strength = find_cell_definition( pCell->type_name )->phenotype.mechanics.cell_cell_repulsion_strength;
-            phenotype.mechanics.cell_cell_repulsion_strength = find_cell_definition( pCell->type_name )->phenotype.mechanics.cell_cell_adhesion_strength;
-        }
-        else
-        {
-            phenotype.mechanics.cell_cell_repulsion_strength = 0;
-            std::vector<double> migration_direction = normalize( pCell->position );
-            double direction = 1;
-            if ( pCell->type_name == "Rod" || pCell->type_name == "Cone" )
-            {
-                // enforce outer apical boundary
-                if ( dist(pCell->position, {0,0,0}) > parameters.doubles("d_apical_mature"))
-                    direction = -1;
-                // migrate to PR layer
-                if ( dist(pCell->position, {0,0,0}) < parameters.doubles("d_PR_layer_mature"))
-                    direction = 1;
-                else
-                {
-                    direction = UniformRandom();
-                }
-            }
-            set_single_behavior( pCell, "velocity_x", direction * migration_direction[0]);
-            set_single_behavior( pCell, "velocity_y", direction * migration_direction[1]);
-            set_single_behavior( pCell, "velocity_z", direction * migration_direction[2]);
-            double time_m = get_single_behavior( pCell, "custom:time_migrating") + dt;
-            set_single_behavior( pCell, "time_migrating", time_m );
-        }
-    }
+//    // Neurogenic cell division probability as a function of time and apical proximity
+//    if ( pCell->custom_data["custom:flagged_to_differentiate"] == 0.0 ) 
+//    {
+//        set_single_behavior( pCell, "transform to Intermediate", 0.0 );
+//        set_single_behavior( pCell, "transform to RGC", 0.0 );
+//        set_single_behavior( pCell, "transform to MG", 0.0 );
+//        set_single_behavior( pCell, "transform to AC", 0.0 );
+//        set_single_behavior( pCell, "transform to BC", 0.0 );
+//        set_single_behavior( pCell, "transform to HC", 0.0 );
+//        set_single_behavior( pCell, "transform to Rod", 0.0 );
+//        set_single_behavior( pCell, "transform to Cone", 0.0 );
+//    }
+//    // prompt cell to transform
+//    if ( pCell->custom_data["flagged_to_migrate"] == 0 )
+//    {
+//        // halt cell
+//        set_single_behavior( pCell, "velocity_x", 0);
+//        set_single_behavior( pCell, "velocity_y", 0);
+//        set_single_behavior( pCell, "velocity_z", 0);
+//        if ( UniformRandom() < (t-parameters.doubles["Ikzf1_temporal_marker"].value)/(parameters.doubles["mature_temporal_marker"].value-parameters.doubles["Ikzf1_temporal_marker"].value) ) // Neurogenic division decision goes here!
+//        {
+//            if ( UniformRandom() < 0.03 )
+//                set_single_behavior( pCell, "custom:flagged_to_differentiate", 1 );
+//            if ( pCell->custom_data["flagged_to_differentiate"] == 1)
+//            {
+//                // SELECTION OF CELL TYPE FOR NEUROGENIC CELL DIVISION
+//                int type_index = choose_event( fate );
+//                std::string transformation_type_target;
+//                if ( type_index == 0 )
+//                    transformation_type_target = "Intermediate";
+//                if ( type_index == 1 )
+//                    transformation_type_target = "RGC";
+//                if ( type_index == 2 )
+//                    transformation_type_target = "MG";
+//                if ( type_index == 3 )
+//                    transformation_type_target = "AC";
+//                if ( type_index == 4 )
+//                    transformation_type_target = "BC";
+//                if ( type_index == 5 )
+//                    transformation_type_target = "HC";
+//                if ( type_index == 6 )
+//                    transformation_type_target = "Rod";
+//                if ( type_index == 7 )
+//                    transformation_type_target = "Cone";
+//                
+//                set_single_behavior( pCell, "transform to " + transformation_type_target, 1);
+//                set_single_behavior( pCell, "custom:flagged_to_differentiate", 0 );
+//                set_single_behavior( pCell, "custom:flagged_to_migrate", 1);
+//            }
+//        }
+//    }
+//    return;
+//}
+//
+//void retina_velocity_update_function( Cell* pCell, Phenotype& phenotype, double dt )
+//{
+//    // prompt cell to migrate
+//    if ( pCell->custom_data["flagged_to_migrate"] == 1 )
+//    {
+//        if ( pCell->custom_data["time_migrating"] > pCell->custom_data["migration_state_length"] )
+//        {
+//            set_single_behavior( pCell, "custom:flagged_to_migrate", 0);
+//            set_single_behavior( pCell, "custom:time_migrating", 0);
+//            phenotype.mechanics.cell_cell_repulsion_strength = find_cell_definition( pCell->type_name )->phenotype.mechanics.cell_cell_repulsion_strength;
+//            phenotype.mechanics.cell_cell_repulsion_strength = find_cell_definition( pCell->type_name )->phenotype.mechanics.cell_cell_adhesion_strength;
+//        }
+//        else
+//        {
+//            phenotype.mechanics.cell_cell_repulsion_strength = 0;
+//            std::vector<double> migration_direction = normalize( pCell->position );
+//            double direction = 1;
+//            if ( pCell->type_name == "Rod" || pCell->type_name == "Cone" )
+//            {
+//                // enforce outer apical boundary
+//                if ( dist(pCell->position, {0,0,0}) > parameters.doubles("d_apical_mature"))
+//                    direction = -1;
+//                // migrate to PR layer
+//                if ( dist(pCell->position, {0,0,0}) < parameters.doubles("d_PR_layer_mature"))
+//                    direction = 1;
+//                else
+//                {
+//                    direction = UniformRandom();
+//                }
+//            }
+//            set_single_behavior( pCell, "velocity_x", direction * migration_direction[0]);
+//            set_single_behavior( pCell, "velocity_y", direction * migration_direction[1]);
+//            set_single_behavior( pCell, "velocity_z", direction * migration_direction[2]);
+//            double time_m = get_single_behavior( pCell, "custom:time_migrating") + dt;
+//            set_single_behavior( pCell, "time_migrating", time_m );
+//        }
+//    }
 }
 
 void dividing_phenotype_function( Cell* pCell, Phenotype& phenotype, double dt )
@@ -543,6 +553,9 @@ void dividing_phenotype_function( Cell* pCell, Phenotype& phenotype, double dt )
 
 void custom_function( Cell* pCell, Phenotype& phenotype , double dt )
 { return; } 
+
+void retina_velocity_update_function( Cell* pCell, Phenotype& phenotype, double dt)
+{ return; }
 
 void contact_function( Cell* pMe, Phenotype& phenoMe , Cell* pOther, Phenotype& phenoOther , double dt )
 { return; }
